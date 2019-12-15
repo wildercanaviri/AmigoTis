@@ -35,7 +35,8 @@ class CorreoController extends Controller
         
         $cartas_verdes=Carta::Cartas("Verde")->paginate(10);
 
-        return view("correo.index",compact("cartas_buscador","cartas_todas","cartas_rojas","cartas_amarillas","cartas_verdes","notificaciones"));
+        return view("correo.index",compact("cartas_buscador","cartas_todas","cartas_rojas","cartas_amarillas",
+            "cartas_verdes","notificaciones"));
     }
 
     /**
@@ -126,4 +127,15 @@ class CorreoController extends Controller
         }
         return view('correo.generarContenido', compact("cartas","notificaciones"));
     }
+    public function InformacionObtenida(Request $request){
+
+        foreach ($request->codigos as $id) {
+            echo $id;
+            Carta::where('cod_car',$id)->update([
+            'estado'=>"atendido",
+            ]);
+        }
+        return redirect("/correo");
+    }
 }
+

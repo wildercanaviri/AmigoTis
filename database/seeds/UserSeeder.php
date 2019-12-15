@@ -156,9 +156,9 @@ class UserSeeder extends Seeder
         $permiso13->save();
         $permiso14 = new Permission();
         $permiso14->name = "crear boletín";
-        $permiso14->slug = "crear_boletín";
+        $permiso14->slug = "crear_boletin";
         $permiso14->description = "puede crear boletínes con todos sus datos correspondientes";
-        $permiso12->save();
+        $permiso14->save();
 
         $rol = Role::find(1);
         $rol->permissions()->attach($permiso1);

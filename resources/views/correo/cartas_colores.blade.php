@@ -1,5 +1,5 @@
 
-@if($carta->color_car == "Rojo")
+@if($carta->color_car == "Rojo" && ($carta->estado == "visto" || $carta->estado == "nuevo"))
     
     <aside class="cartaCompleta">
 
@@ -17,7 +17,7 @@
     </aside>
 @endif
     
-@if($carta->color_car == "Amarillo")
+@if($carta->color_car == "Amarillo" && ($carta->estado == "visto" || $carta->estado == "nuevo"))
     <aside class="cartaCompleta">  
     <img src="{{asset('assets/img/amarillo.png')}}" height="5px" width="280px">
    
@@ -30,7 +30,7 @@
     </aside>
 @endif
     
-@if($carta->color_car == "Verde")
+@if($carta->color_car == "Verde" && ($carta->estado == "visto" || $carta->estado == "nuevo"))
     <aside class="cartaCompleta">
     <img src="{{asset('assets/img/verde.png')}}" height="5px" width="280px">
     <a href="#" onClick="Mostrar('{{$carta->cod_car}}', '{{$carta->autor}}','{{$carta->hora}}','{{$carta->fecha}}','{{$carta->contenido}}' );" data-toggle="modal" 

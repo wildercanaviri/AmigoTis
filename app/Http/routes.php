@@ -104,7 +104,7 @@ Route::resource('/roles',"RolesController");
    
 
 
-  Route::get('/correo', "CorreoController@index")->middleware('permissionshinobi:ver_correo');
+  Route::get('/correo', "CorreoController@index");
    Route::get('/configuracion',"CuentaUsuarioController@configuracion");
 
     Route::post('cambiar_leido',"CartasController@cambiar_a_leido");
@@ -121,9 +121,15 @@ Route::resource('/roles',"RolesController");
 
    Route::get('correo/generarNuevaInformacion', "CorreoController@generarNuevaInformacion");
    Route::post('correo/generarNuevaInformacion', "CorreoController@generarNuevaInformacion");
+
+
+   Route::post('/infoNueva', "CorreoController@InformacionObtenida");
+      
    Route::resource('/crearBoletin',"BoletinesController");
 
-
+   Route::get('/informacion/{id}',"InformacionController@create")->name('informacion.create');
+   Route::post('/informacion/create',"InformacionController@store");
+   
 
 });
 //Route::resource('/correo', "CorreoController");

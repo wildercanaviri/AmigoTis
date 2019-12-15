@@ -14,6 +14,7 @@ class Carta extends Model
     
     public function scopeCartas($query, $color){
         return $query->where('color_car',$color);
+                           
     }
     
     public function scopeBuscar($query,$buscar){   
