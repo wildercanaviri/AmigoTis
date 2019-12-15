@@ -1,0 +1,190 @@
+
+nav{
+    margin:0 50px;
+    border-style: solid;    
+}
+li{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.contenedorPerrito{
+                margin-top: 3   0px;
+                position: relative;
+                margin-left: -40px;
+                /*text-align: center;*/
+                
+            }
+
+            .centradoMiNombreEs{
+
+
+                position: absolute;
+                
+                transform: translate(120%, -140%);
+            }
+            #imagenGlobito{
+                /*
+                *position: relative;
+               
+                transform: translate(120%, -200%);
+                 */
+                 position: absolute;
+               
+                transform: translate(-30%,-25%);
+                width: 300px;
+                
+            }
+            .centrado2HolaSoyLucas{
+                position: absolute;
+               
+                transform: translate(370%,-430%);
+                color: black;
+                font-weight: bold;
+            }
+            
+            #imagenPerrito{
+                margin-left: -60px;
+            }
+            textarea{
+                /*border-width: medium;
+                border-color: black;
+                border-style: solid ;
+                border: 0px;
+                resize: none;*/
+
+            }
+            
+            #texto{
+                font-size: 18px;
+                position: absolute;
+                
+                transform: translate(-105%, 3%);
+                background-color: transparent;
+                 border: 0px;
+                resize: none;
+            }
+            #cajaPerrito{
+                font-weight: bold;
+                border-width: medium;
+                border-color: black;
+                border-style: solid ;
+                resize: none;
+                
+            }
+.panelIzquierda{
+    width: 250px;
+    height: 68%;
+    display: inline-block;
+    margin-left: 50px;
+}
+.panelCentral{
+    margin-top: 40px;
+    text-align: center;
+    width: 700px;
+    height: 68%;
+    display: inline-block;
+}
+#cajaimagen{
+    margin-top: 40px;
+    position : relative;
+    float:left;
+    width: 210px;
+    height: 250px;
+    
+    border-color: black;
+    border-style: solid ;
+    background: white;
+    
+     
+    overflow: auto;
+    overflow: scroll;
+    overflow-x: hidden; 
+}
+img.imagen{
+    width: 120px;
+    height: 120px;
+   
+}
+
+#clonado{
+    /*position: absolute;*/ 
+    position: absolute;
+    transform: translate(22%, -102%);
+    border-color: red;
+    border-style: solid ;
+    background: white;
+    /*left: 350px;
+    top: 540px ;*/
+    width: 470px;
+    height: 150px;
+    resize: none;
+
+}
+#insertado{
+    position:relative;
+}
+
+
+
+ .papelera {
+              background-image: url('{{asset('assets/img/basurero.png')}}');
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              float: left;
+              width: 120px;
+              height: 120px;
+              padding: 20px;
+              
+            margin-left: 30px; 
+            border-style: solid ;
+            border-style: solid ;
+            position : relative;
+            
+
+           }
+            .eligir_archivos{
+               position: absolute;
+                margin-top: 20px;
+                left: 50px;
+               
+            }
+#contenedor{
+    margin-left: 50px;
+    width: 750px;
+}
+.content{
+    width: 656px;
+}
+#formularioBusacadorCartas{
+    display: inline;
+    width: 100%;
+    height: 100%;
+}
+#lupa{
+    position: relative;
+    width: 22px;
+    height: 22px;
+}
+#contenidoCarta{
+
+    height: 20px;
+    width: 250px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+#fechaHoraCarta{
+    margin-left: 350px;
+}
+.cartaCompleta{
+    width: 600px;
+}
+.cartaCompleta:hover{
+    background-color: #F4D3F8;
+    border-radius: 5px;
+    cursor: pointer;
+}
