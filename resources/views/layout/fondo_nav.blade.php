@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>AMIGO MENSAJERO</title>
+        <!--Favicon-->
+      <!--
+      <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/default/Perro.png')}}">
+-->
+  <link href="/assets/img/default/Perro.png" rel="shortcut icon" type="image/x-icon" />
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">

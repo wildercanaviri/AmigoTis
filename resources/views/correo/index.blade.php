@@ -61,6 +61,7 @@
     <div class="content-2">
       
       @foreach($cartas_rojas as $carta)
+        @if($carta->estado == "visto" || $carta->estado == "nuevo")
           <aside class="cartaCompleta">
               <img src="{{asset('assets/img/rojo.png')}}" height="5px" width="280px">
               <a href="#" onClick="Mostrar( 
@@ -72,7 +73,7 @@
               <span class="badge badge-primary">{{$carta->estado}}</span>
               <p>-------------------------------------------<p>  
           </aside>
-            
+        @endif    
       @endforeach
       
     </div>
@@ -82,6 +83,8 @@
     <div class="content-3">
       
         @foreach($cartas_amarillas as $carta)
+        @if($carta->estado == "visto" || $carta->estado == "nuevo")
+        
         <aside class="cartaCompleta">   
           <img src="{{asset('assets/img/amarillo.png')}}" height="5px" width="280px">
           <a href="#" onClick="Mostrar('{{$carta->cod_car}}', '{{$carta->autor}}','{{$carta->hora}}','{{$carta->fecha}}', '{{$carta->contenido}}' );"
@@ -92,6 +95,7 @@
             <span class="badge badge-primary">{{$carta->estado}}</span>
             <p>-------------------------------------------<p>      
         </aside>
+        @endif
         @endforeach
             
     </div>
@@ -100,6 +104,8 @@
     <!--CONTENIDO CARTAS VERDES-->
     <div class="content-4">
         @foreach($cartas_verdes as $carta)
+        @if($carta->estado == "visto" || $carta->estado == "nuevo")
+        
             <aside class="cartaCompleta">
             <img src="{{asset('assets/img/verde.png')}}" height="5px" width="280px">
             <a href="#" onClick="Mostrar( '{{$carta->cod_car}}','{{$carta->autor}}','{{$carta->hora}}','{{$carta->fecha}}','{{$carta->contenido}}' );"
@@ -108,7 +114,8 @@
              value="{{$carta->cod_car}}" style="position: relative !important; visibility: visible !important; margin-left: 40px; width: 20px; height: 20px;">
             <span class="badge badge-primary">{{$carta->estado}}</span>
             <p>-------------------------------------------<p>  
-        </aside>      
+        </aside>
+        @endif      
         @endforeach
     </div>
   <!-- FIN CONTENIDO CARTAS VERDES-->
