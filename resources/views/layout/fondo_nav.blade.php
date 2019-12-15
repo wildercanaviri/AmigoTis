@@ -49,6 +49,7 @@
 
     </head>
     <body>
+    
             <header>
                 <!-- Logotipo y titulo -->
                 <img src="{{asset('assets/img/avion.png')}}" height="80px" width="150px"><a class="navbar-brand" href="#" style="font-family: 'Concert One', cursive; font-size: 45px; color: white;">EL AMIGO MENSAJERO</a>
@@ -59,6 +60,7 @@
                        <button type="button" class="btn btn-success" data-toggle="modal" onclick="location.href='http://localhost:8000/logout'" style="margin-left:350px; border:0px; padding: 0px;"><img src="{{asset('assets/img/botonCerrarSesion.jpeg')}}" height="40px" width="200px"/></button>
 
                        !-->
+                       
                          <div class="btn-group" style="margin-left:350px;">
                         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" style="background-color: #C0FFA4; font-weight: bold; color: black; border-radius: 0px;">
 
