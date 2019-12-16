@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carta extends Model
 {
-   protected $fillable = ["nom", "contenido", "fecha","color_car","estado"];
+   protected $fillable = ["nom", "contenido", "fecha","hora","color_car","estado"];
     
     public function imagenes(){
     	return $this->hasMany('App\Imagen', 'cod_car');

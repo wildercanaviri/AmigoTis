@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AMIGO MENSAJERO</title>
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
-
-          <!--Favicon-->
-
     <style>
     #campos{
         width: 30%;
@@ -116,11 +113,18 @@ transition: all linear 0.1s;
 </head>
 <body>
     @include("layout.fondo_nav")
+   <div class="cabecera">
     @yield("cabecera")    
-
+</div>
     <div class="contenido">
         @yield("contenido")
     </div>
     
+    <div class="pie_pagina">
+        @yield("pie_pagina")
+    </div>
+    
+
+
 </body>
 </html>

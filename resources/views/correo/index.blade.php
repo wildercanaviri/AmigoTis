@@ -108,7 +108,9 @@
         
             <aside class="cartaCompleta">
             <img src="{{asset('assets/img/verde.png')}}" height="5px" width="280px">
-            <a href="#" onClick="Mostrar( '{{$carta->cod_car}}','{{$carta->autor}}','{{$carta->hora}}','{{$carta->fecha}}','{{$carta->contenido}}' );"
+            <a href="#" onClick="Mostrar('{{$carta->cod_car}}','{{$carta->autor}}','{{$carta->hora}}',
+              '{{$carta->fecha}}','{{$carta->contenido}}');"
+
             data-toggle="modal" data-target="#exampleModal">[ver carta]</a>
             <aside id="contenidoCarta" onClick="alert('hola')"> {{$carta->contenido}}</aside><a id="fechaHoraCarta">{{$carta->fecha}} &nbsp {{$carta->hora}}</a><input type="checkbox" name="cont_cartas_verdes[]"
              value="{{$carta->cod_car}}" style="position: relative !important; visibility: visible !important; margin-left: 40px; width: 20px; height: 20px;">

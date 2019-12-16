@@ -39,7 +39,7 @@
          
         <input type="text" name="id" id="id" hidden>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Cerrar</button>        
+          <button type="submit" class="btn btn-primary" >Cerrar</button>        
         </div>
 
       

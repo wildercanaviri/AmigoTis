@@ -69,6 +69,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
+        <center>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src ="{{asset('assets/img/carusel/fondo1.png')}}" class="d-block w-100" width="100" height="500">
@@ -80,6 +81,7 @@
             <img src="{{asset('assets/img/carusel/fondo3.png')}}" class="d-block w-100" width="100" height="500">
           </div>
         </div>
+        </center>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -90,5 +92,34 @@
         </a>
       </div>
       @endsection
+      @section("pie_pagina")
+
+
+ <!--MOSTRAR CON MODAL LA CARTA SELECCIONADA-->
+    @include("../modal_bienvenido")
+
+<br>
+ <p class="text-center" style="color: white;">---------------------------</p>
+
+    <footer style="background-color: bold; color: white; margin-bottom: -50px;">
+        <div >
+        <div class="footer-copyright text-center">© 2019 Copyright:
+            <a> El Amigo Mensajero</a>
+            <p>Desarrollado por Sublime Projects S.R.L.</p>
+        </div>
+        </div>
+
+    </footer>
+
+     
+      @endsection
+
+ <script type="text/javascript">
+$( document ).ready(function() {
+    $('#myModal').modal('toggle')
+});
+</script>
+
+
     </body>
 </html>

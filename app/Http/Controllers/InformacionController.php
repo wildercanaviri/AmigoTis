@@ -35,8 +35,6 @@ class InformacionController extends Controller
         $informacion->uni_egr =  $request->universidad;
         $informacion->logros =  $request->logros;
         
-        $informacion->save();
-        
         $i = 0;
         $imagenSubida="true";
             $tmp_name = $_FILES["mi_imagen"]["tmp_name"][$i];

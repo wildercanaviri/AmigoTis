@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Carta;
 use App\Notificacion;
+use App\Contenido;
+use Carbon\Carbon;
 class CorreoController extends Controller
 {
     /**
@@ -130,11 +132,17 @@ class CorreoController extends Controller
     public function InformacionObtenida(Request $request){
 
         foreach ($request->codigos as $id) {
-            echo $id;
+            
             Carta::where('cod_car',$id)->update([
             'estado'=>"atendido",
             ]);
         }
+
+        $contenido=new Contenido();
+        $contenido->contenido=$request->cont_nuevo;
+        $contenido->fecha=Carbon::now()->format('Y-m-d');
+        $contenido->hora=Carbon::now()->format('H:i:s');
+        $contenido->save();
         return redirect("/correo");
     }
 }

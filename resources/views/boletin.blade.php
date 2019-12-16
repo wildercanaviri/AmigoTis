@@ -52,7 +52,7 @@
                     </ul>
                   </div>
                 </nav>  
-        <h2 style="color: white;">ESTA ES LA VISTA DE BOLETINES</h2>
+        <h2 style="color: white;">BOLETINES PUBLICADOS</h2>
       @endsection  
     </body>
 </html>
