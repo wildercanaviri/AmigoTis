@@ -34,50 +34,58 @@
                 <h2 style="color: white;">ESTA ES LA VISTA PARA AÑADIR INFORMACION</h2> 
 @endsection
 @section("contenido")
-<form id="datos_formulario" action="/informacion/create" enctype="multipart/form-data" method="post">
+<form id="datos_formulario" action="/informacion/create" enctype="multipart/form-data" method="post" >
     {{csrf_field()}}
-  <div class="form-row">
-      <div class="form-group col-md-4">
+  <div class="row justify-content-md-center">
+    <div class="form-group col-4" >
+      <label for="experiencia" style="color:#FFFFFF">Experiencia</label>
+      <input type="text" class="form-control" id="experiencia" placeholder="Experiencia" name ="experiencia"
+      pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/>
+    </div>
+    
+    <div class="form-group col-2">
         <label for="especialidad" style="color:#FFFFFF">Especialidad</label>
-        <input type="text" class="form-control" id="especialidad" placeholder="Especialidad" name ="especialidad">
+        <select class="custom-select " id="especialidad" name ="especialidad">
+          <option selected>Especialidad</option>
+          <option value="1">Psicologo</option>
+          <option value="2">Novelista</option>
+          <option value="3"></option> 
+        </select>
       </div>
-      <div class="form-group col-md-4">
-        <label for="experiencia" style="color:#FFFFFF">Experiencia</label>
-        <input type="textarea" class="form-control" id="experiencia" placeholder="Experiencia" name ="experiencia">
-      </div>
-
-      <div class="form-group col-md-6" >
-        <label for="formacion" style="color:#FFFFFF">Formacion</label>
-        <input type="text" class="form-control" id="formacion" placeholder="Formacion" name ="formacion">
-      </div>
-      <div class="form-group col-md-2">
+      
+      <div class="form-group col-2">
         <label for="universidad" style="color:#FFFFFF">Universidad de Egreso</label>
-        <input type="text" class="form-control" id="universidad" placeholder="Universidad" name="universidad">
-      </div>
-      <div class="text-center form-group col-md-3" id="nuevo">
-       
-        <label for="usuario" style="color:#FFFFFF">Perfil</label>
-        <input type="number"  name ="user_id" hidden class="frorm-control" id="usuario"  value="{{$usuario->id}}" >                    
-      </div>
-    </div> 
-    <div class="form-row">
-      <div class="form-group col-md-2">
-        <label for="años" style="color:#FFFFFF"> Años de Experiencia </label>
-        <input type="number" class="form-control" id="años" placeholder="AñosdeExperiencia" name="anio_es">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="logros" style="color:#FFFFFF">Logros</label>
-        <input type="text" class="form-control" id="logros" placeholder="Logros" name="logros">
-      </div>
-    </div>
-    
-    <div class="form-group">
-      <label for="exampleFormControlFile1" style="color:#FFFFFF">Ingrese una Foto</label>
-      <input type="file" id="file" class= "eligir_archivos" name="mi_imagen[]" multiple="true" onchange="return validarExt()">
-    </div>
-    <br>
-    <button type="submit" class="btn btn-warning" style="color: #000000">Guardar</button>
-    
+        <input type="text" class="form-control" id="universidad" placeholder="Universidad" name="universidad"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,20}" required/>
+      </div> 
+     
+      <div class="row ">
+          <div class="form-group col-2">
+            <label for="años" style="color:#FFFFFF"> AñosExperiencia </label>
+            <input type="number" class="form-control" id="años" placeholder="AñosdeExperiencia" name="anio_es">
+          </div>
+         <div class="form-group col col-lg-8">
+             <label for="logros" style="color:#FFFFFF">Logros</label>
+              <input type="text" class="form-control" id="logros" placeholder="Logros" name="logros"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/>
+          </div>
+          <div class="form-group col col-lg-8" >
+            <label for="formacion" style="color:#FFFFFF">Formacion</label>
+            <input type="text" class="form-control" id="formacion" placeholder="Formacion" name ="formacion"  pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required/>>
+          </div>
+      </div>    
+      
+      <div class="row ">
+      
+        <div class="form-group col col-lg-6">
+          <label for="file" style="color:#FFFFFF">Ingrese una Foto</label>
+          <input type="file" id="file" class= "eligir_archivos" name="mi_imagen[]" multiple="true" onchange="return validarExt()">
+        </div  >
+         
+         <div class="form-group col col-lg-6">
+          <button type="submit" class="btn btn-warning" style="color: #000000">Guardar</button>
+         </div>
+        </div>  
+        
+        <input type="number" name="user_id" hidden  id="usuario"value="{{$usuario->id}}">
   </form>
 @endsection
 @endif

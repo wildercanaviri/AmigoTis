@@ -106,7 +106,16 @@ class PermisosController extends Controller
             return view("errors.403",compact("notificaciones"));
         }
        $permisos=Permission::all();
-       $roles = Role::all();
+       $role = Role::all();
+       $roles = array();
+        foreach($role as $rol){
+            if(count($rol->permisos) == 0){
+                $id = $rol->id;
+                $aux = Role::find($id);
+                $roles[] = $aux;
+            }
+        }
+        dd($roles);
        return view("permisos.asignar",compact("permisos","roles","notificaciones"));
     
     }
