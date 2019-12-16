@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AMIGO MENSAJERO</title>
-
+    <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
 
           <!--Favicon-->
-
-<link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/es/img/favicon.ico?v=a8def514be8a">
-  <link href="/assets/img/default/Perro.png" rel="shortcut icon" type="image/x-icon"/>
 
     <style>
     #campos{

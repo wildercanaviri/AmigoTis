@@ -20,7 +20,7 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
         <link href="{{asset('assets/css/draganddrop.css')}}" rel="stylesheet">
-        
+        <link rel="stylesheet" type="text/css"  href="{{asset('assets/css/modal_enviar.css')}}">
         <script src="{!! asset('assets/js/dragandrop.js') !!}"></script>
         <style type="text/css">
           .atras{
@@ -33,6 +33,7 @@
              border:none;*/
           }
         </style>
+        <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
     </head>
     <body>
     @extends("layout.plantilla")
@@ -120,8 +121,9 @@
                 <img src="{{asset('assets/img/botonEnviar.png')}}" height="80px" width="180px" onclick="alert('Se enviará la carta al Amigo Mensajero');" style="cursor: pointer; margin-left: 50px;">
                !-->
                 <input type="submit" name="EnviarCarta" value="" style="background-image: url('{{asset('assets/img/botonEnviar.png')}}'); 
-                background-size: contain; height: 89px; width: 190px; margin-left: 50px; position: absolute; top: 520px; " onclick="if">
-              </div>
+                background-size: contain; height: 89px; width: 190px; margin-left: 50px; position: absolute; top: 520px; " onclick="if" data-toggle="modal" data-target="#exampleModalCenter">
+                @include("../cartaenviada")
+            </div>
           </section> 
            <section id="clonado" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return clonar(event)" style="overflow: scroll;">
               <output id="list" for="mi:_imagen[]"></output>
