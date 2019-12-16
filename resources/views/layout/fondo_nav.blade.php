@@ -37,7 +37,10 @@
                 background-size: cover;
                 height: 800px;
             }
-           
+           @media (max-width:700px) and (min-width:100px) {
+      #avion{
+         display: none;
+      }
         </style>
 		
 
@@ -47,9 +50,9 @@
     
             <header>
                 <!-- Logotipo y titulo -->
-                <img src="{{asset('assets/img/avion.png')}}" height="80px" width="150px"><a class="navbar-brand" href="#" style="font-family: 'Concert One', cursive; font-size: 45px; color: white;">EL AMIGO MENSAJERO</a>
+                <img id="avion" src="{{asset('assets/img/avion.png')}}" height="80px" width="150px"><a class="navbar-brand" href="#" style="font-family: 'Concert One', cursive; font-size: 4vw; color: white;">EL AMIGO MENSAJERO</a>
                 @if (Auth::guest())
-                        <button type="button" class="btn btn-success" data-toggle="modal" onclick="location.href='http://localhost:8000/login'" style="margin-left:350px; border:0px; padding: 0px;"><img src="{{asset('assets/img/botonIniciarSesion.png')}}" height="40px" width="200px"/></button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" onclick="location.href='http://localhost:8000/login'" style="position:absolute;right: 50px;top:30px; border:0px; padding: 0px;"><img src="{{asset('assets/img/botonIniciarSesion.png')}}" height="40px" width="200px"/></button>
                     @else 
                     <!--
                        <button type="button" class="btn btn-success" data-toggle="modal" onclick="location.href='http://localhost:8000/logout'" style="margin-left:350px; border:0px; padding: 0px;"><img src="{{asset('assets/img/botonCerrarSesion.jpeg')}}" height="40px" width="200px"/></button>

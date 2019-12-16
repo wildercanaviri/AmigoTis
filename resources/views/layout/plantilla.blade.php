@@ -9,8 +9,6 @@
 
           <!--Favicon-->
 
-<link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/es/img/favicon.ico?v=a8def514be8a">
-  <link href="/assets/img/default/Perro.png" rel="shortcut icon" type="image/x-icon"/>
 
     <style>
     #campos{
@@ -119,11 +117,18 @@ transition: all linear 0.1s;
 </head>
 <body>
     @include("layout.fondo_nav")
+   <div class="cabecera">
     @yield("cabecera")    
-
+</div>
     <div class="contenido">
         @yield("contenido")
     </div>
     
+    <div class="pie_pagina">
+        @yield("pie_pagina")
+    </div>
+    
+
+
 </body>
 </html>

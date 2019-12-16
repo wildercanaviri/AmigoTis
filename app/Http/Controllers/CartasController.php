@@ -53,7 +53,7 @@ class CartasController extends Controller
         $carta->contenido=$request->contenido;
         $carta->fecha=Carbon::now()->format('Y-m-d');
         $carta->hora=Carbon::now()->format('H:i:s');
-                     
+                   
  
         $contenido=strtoupper($request->contenido);
         $palabra_texto=explode(" ", $contenido);
@@ -94,10 +94,12 @@ class CartasController extends Controller
 
     //FIN
         $carta->color_car=$resultado;
+          $carta->estado="nuevo";  
         $carta->save();
         
          $notificacion->leido=0;
         $notificacion->color=$resultado;
+
         $notificacion->save();
         
         
