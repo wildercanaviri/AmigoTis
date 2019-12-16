@@ -49,7 +49,7 @@
                
                     <option value="{{$usuario->id}}">{{$usuario->nom_usu}} {{$usuario->ape_usu}} </option>
                 
-              @endforeach
+                @endforeach
             </select>
           </td>
         </tr>
@@ -57,13 +57,15 @@
         <tr>
         <td id="idCampo">Rol</td>
             <td>
-              @foreach($roles as $role)
-              
-              <label for="roles" id="idCampo">
-                  <input type="checkbox" id="rol" name="roles[]" value="{{$role->id}}" style="position: relative !important; visibility: visible !important; margin-left: 20px; width: 20px; height: 20px;">&nbsp{{$role->name}}
-              </label>
-              <br>
-              @endforeach
+             
+                    @foreach($roles as $role)
+                  
+                  <label for="roles" id="idCampo">
+                      <input type="checkbox" id="rol" name="roles[]" value="{{$role->id}}" style="position: relative !important; visibility: visible !important; margin-left: 20px; width: 20px; height: 20px;">&nbsp{{$role->name}}
+                  </label>
+                  <br>
+                  @endforeach 
+             
             </td>
         </tr>
           

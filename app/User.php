@@ -70,7 +70,9 @@ class User extends Authenticatable
                     ->orWhere('email','LIKE','%' . $buscar . '%');
         
     }
-
+     public function scopeGetUser($query,$id){
+        return $query->where('id',$id);
+    }
 
 
     /*

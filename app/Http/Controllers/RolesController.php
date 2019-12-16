@@ -155,14 +155,27 @@ class RolesController extends Controller
         return redirect("/roles"); 
     }
     public function asignar(){
-        //$usrol = User::has('roles')->get();
+        $usrol = User::has('roles')->get();
         $notificaciones=Notificacion::Notificacion("0")->paginate(10);
         if(\Auth::user()->can('asignar_rol')==false){
             return view("errors.403",compact("notificaciones"));
         }
-        $usuarios=User::all();
+        $todos_usuarios=User::all();
+        $usuarios=array();
+       
+        
         $roles=Role::all();
-        return view("roles.asignar",compact("usuarios","roles","notificaciones"));
+
+       foreach ($todos_usuarios as $usuario) {
+
+            if(count($usuario->roles)==0){
+                $id=$usuario->id;
+                $aux=User::find($id);
+                $usuarios[]=$aux;
+            }
+        }
+
+    return view("roles.asignar",compact("usuarios","roles","notificaciones"));
     
     }
 
