@@ -57,8 +57,19 @@ class CartasController extends Controller
  
         $contenido=strtoupper($request->contenido);
         $palabra_texto=explode(" ", $contenido);
-        $array_peligrosas = array("MATAR", "MUERTE", "MORIRME", "SANGRE","MATANZA","ASESINAR","APUÃ‘ALAR");
-        $array_correctas = array("ESTUDIO","LEER","CANTAR","REZAR","AGRADECER","DIOS","AMOR");
+        $array_peligrosas = array("MATAR", "MUERTE", "MORIRME", "SANGRE","MATANZA","ASESINAR","APUÑALAR",
+            "TONTO","BABOSO","INUTIL","INUTILES","VIOLAR","IRRESPONSABLE","FRACASO","ODIO","INCOMPENTE","FLOJO",
+            "ENOJON","RIDICULO","MATARE","DENUNCIARE","MALDECIR","MALDECIRE","VENGANZA","MASOQUISTA","MASOQUISMO",
+            "ROBAR","ROBABA","MATABA","ACUCHILLAR","COJUDO","MIERDA","CARAJO","PUTA","LUJURIA","AVARACIA","GULA",
+            "ORGULLO","DESINTERES","PEREZA","HUEVON","ALCAHUETE","PENDEJO","PETE","PITO");
+
+
+
+        $array_correctas = array("ESTUDIO","LEER","CANTAR","REZAR","AGRADECER","DIOS","AMOR","CUIDARE","PLANTAS"
+            ,"FAMILIA","HERMANOS","PADRES","BUENO","CUIDAME","GUSTA","ESTUDIAR","HERMOSA","HERMOSO","BELLO","BELLA"
+            ,"MAGICO","SOLIDARIDAD","PAZ","MAMÁ","PAPÁ","ALABARE","GRACIAS","CURAR","ORAR","AVENTURA","DIVERTIDO",
+            "ALEGRE","FELICIDAD","FELIZ","CARISMATICO","EXCELENTE","BIEN","BUENA","SALUDAR","BUEN","POSITIVO",
+            "SALUDABLE","VERDURAS");
      
         //$array_normales = array("familia","casa","padre","madre","hermanos","navidad");
         $resultado="";

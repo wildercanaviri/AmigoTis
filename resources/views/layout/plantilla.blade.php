@@ -16,16 +16,19 @@
         background:#FFFFFF;
         }
     
-    thead{
+    /*thead{
         background-color: rgb(255,192,0);
         font-size: 14px;
         font-weight: bolder;
         }
+*/
         #idCampo{
             color: white;
             font-weight: bold;
             
         }
+
+
 /*CSS PARA LA LLEGADA DE LOS CORREOS */
 
 #contenedor {

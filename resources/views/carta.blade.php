@@ -47,22 +47,22 @@
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/inicio">Inicio</a>
+                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/inicio">Inicio</a>
                       </li>
                       <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost:8000/carta" style="text-decoration: underline;">Escribe tu Carta<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/carta" style="text-decoration: underline;">Escribe tu Carta<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/boletin">Boletín</a>
+                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/boletin">Boletín</a>
                       </li>
                       @if (Auth::guest())
                         
                     @else
                        <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/usuarios">Usuarios</a>
+                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/usuarios">Usuarios</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost:8000/roles">Roles</a>
+                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/roles">Roles</a>
                       </li>
                     @endif
                     </ul>
@@ -70,18 +70,29 @@
                 </nav> 
         <div class="panelIzquierda">
          
-           <div  id="cajaimagen" ondragenter="return enter(event)" ondragleave="return leave(event)" ondrop="return clonar(event)" >
-                          <img class="imagen" src= "{{asset('assets/img/default/mama_coco.png')}}"  id="img" draggable="true" ondragstart="start(event)" ondragend="end(event)">
-                          <img class="imagen" src ="{{asset('assets/img/default/auto.png')}}" id = "img1"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
-                          <img class="imagen" src ="{{asset('assets/img/default/minecraft.png')}}" id = "img2"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
-                          <img class="imagen" src ="{{asset('assets/img/default/Perro.png')}}" id = "img3"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
+           <div  id="cajaimagen" ondragenter="return enter(event)" ondragleave="return leave(event)" 
+           ondrop="return clonar(event)" >
+                          <img class="imagen" src= "{{asset('assets/img/default/mama_coco.png')}}"  
+                          id="img" draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                          
+                          <img class="imagen" src ="{{asset('assets/img/default/auto.png')}}" 
+                          id = "img1"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                          
+                          <img class="imagen" src ="{{asset('assets/img/default/minecraft.png')}}" 
+                          id = "img2"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
+                          
+                          <img class="imagen" src ="{{asset('assets/img/default/Perro.png')}}" 
+                          id = "img3"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
 
           </div>
+
             <div>
               <div style="color: white; font-weight: bold; margin-left: 40px;margin-top: 300px;">
                   Borrar <br>Imagen                    
               </div>
-              <div  class = "papelera" id="papelera" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return eliminar(event)" style="background-image: url('{{asset('assets/img/basurero.png')}}');"> 
+              <div  class = "papelera" id="papelera" ondragenter="return enter(event)" ondragover="return over(event)" 
+              ondragleave="return leave(event)" ondrop="return eliminar(event)" 
+              style="background-image: url('{{asset('assets/img/basurero.png')}}');"> 
               </div>
    
             </div>
@@ -93,8 +104,6 @@
       
            <div class="panelCentral">
         
-         <!-- <form ondragstart="return false;" ondrop="return false;" action="/carta" method="post" enctype="multipart/form-data" name="form1" >
-         -->
          <form action="/carta" method="post" enctype="multipart/form-data" name="form1" >
         {{csrf_field()}}
          <input type="file"  class= "eligir_archivos" name="mi_imagen[]" id="file-upload" multiple="true" style="color: white;margin-left: 20px;margin-bottom: 20px; ">
@@ -131,57 +140,19 @@
       </form>
       </div>
        
-        
-
             <div style="position: absolute; right: 120px; top: 320px;">
-            <img src="{{asset('assets/img/microfono.png')}}" height="120px" width="120px" onclick="procesar()" style="cursor: pointer;">
+                <img src="{{asset('assets/img/microfono.png')}}"
+                 height="120px" width="120px" onclick="procesar()" 
+                 style="cursor: pointer;">
             <div>
-            <button onclick="procesar()" id="procesar"> Dictar por Voz</button>
+
+                <button onclick="procesar()" id="procesar"> Dictar por Voz</button>
             </div>
+       
         </div>
             
             <script>
-            /*  
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
- 
-            reader.onload = function (e) {
-                var filePreview = document.createElement('img');
-                filePreview.id = 'file-preview';
-                //e.target.result contents the base64 data from the image uploaded
-                filePreview.src = e.target.result;
-                console.log(e.target.result);
- 
-                var previewZone = document.getElementById('clonado');
-                
-                previewZone.appendChild(filePreview);
-                var img1 = document.getElementById('file-preview');
-                //img1.width=120;
-                //img1.height=120;
-                img1.className = "imagen";
-                img1.draggable = true;
-                img1.ondragstart=function start(e){
-                  e.dataTransfer.effecAllowed = 'move'; // Define el efecto como mover (Es el por defecto)
-            e.dataTransfer.setData("Data", e.target.id); // Coje el elemento que se va a mover
-            e.dataTransfer.setDragImage(e.target,0,0); // Define la imagen que se vera al ser arrastrado el elemento y por donde se coje el elemento que se va a mover (el raton aparece en la esquina sup_izq con 0,0)
-            e.target.style.opacity = '0.4';
-                };
-                img1.ondragend=function end(e){
-                  e.target.style.opacity = ''; // Pone la opacidad del elemento a 1           
-            e.dataTransfer.clearData("Data");
-                };
-            }
- 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
- 
-    var fileUpload = document.getElementById('file-upload');
-    fileUpload.onchange = function (e) {
-        readFile(e.srcElement);
-    }
- */
+       
 function openImage() { //Esta función validaría una imágen
         
       var input = this;
