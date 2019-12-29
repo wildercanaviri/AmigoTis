@@ -4,10 +4,11 @@
   <br>
 @endsection
 @section("contenido")
-<div class="row">
-<div class= "col"> 
+
 <form action="/usuarios/{{$usuario->id}}" method="post">
-<table style="background-color: transparent;margin: auto 25%;">
+  <div class="row " style="text-align: center;" >
+    <div class= "col">
+  <table style="background-color: transparent;margin: auto 25%;">
 
 <tr>
 <td id="idCampo">Nombre: </td>
@@ -45,19 +46,17 @@
                   background-size: contain; height: 40px; width: 189px;margin-top: 50px;">
 </td></tr>
 </table>
-</form>
 </div>
-<div class= "col" > 
+ <div class= "col"> 
   @foreach($roles as $rol)
         
-        <label  for="roles">
-            <input type="checkbox" class="form-check-input" id="rol" name="roles" value="{{$rol->id}}"
+        <label id="idCampo" for="roles" >
+            <input type="checkbox" class="form-check-input" id="rol" name="roles[]" style="position: relative !important; visibility: visible !important; margin-left: 20px; width: 20px; height: 20px;" value="{{$rol->id}}"
             {{in_array($rol->name,$rols)?"checked":""}}>{{$rol->name}}
-        </label>
+       </label>
         <br>
    @endforeach
-
 </div>
-
 </div>
+</form>
 @endsection

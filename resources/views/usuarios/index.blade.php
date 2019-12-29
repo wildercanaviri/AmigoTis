@@ -23,10 +23,7 @@
   <div class="col-sm-3">
    <form id="formularioBuscadorCartas" action="/usuarios"  method="get">
       <div>  
-        <!--
-            <div style="position: absolute;right: 200px; background-color: white; width: 220px;">  
-        -->
-        <input id="buscar" name="buscar" type="text" placeholder="Buscar usuario" 
+        <input id="buscar" name="buscar" type="text"  placeholder="Buscar usuario" 
         aria-describedby="buscador" style="border: 1px;">
         
         <button type="submit" style=" background-color: white;">

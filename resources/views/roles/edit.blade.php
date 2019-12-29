@@ -1,7 +1,8 @@
 @extends("../layout/plantilla")
 @section("cabecera")
   @include("../roles/menu")
-  <h2 style="color: white;">ESTA ES LA VISTA DE AMINISTRADOR-PESTAÑA Roles/Editar Roles</h2> 
+  <h2 
+  >ESTA ES LA VISTA DE AMINISTRADOR-PESTAÑA Roles/Editar Roles</h2> 
 @endsection
 @section("contenido")
 
@@ -13,8 +14,7 @@
     <td>Rol</td>
     <td>
       <select name="role_id" >
-         
-            <option value="{{$rol->id}}">{{$rol->name}} </option>
+          <option value="{{$rol->id}}">{{$rol->name}} </option>
       </select>
     </td>
     </tr>

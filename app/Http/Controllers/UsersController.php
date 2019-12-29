@@ -166,12 +166,14 @@ class UsersController extends Controller
         'fecha_nac'=>$request->fecha_nac,
         'tel_usu'=>$request->tel_usu,
          ]);
-        // $usur = User::findOrFail($id);
-        
-         //$usur->roles()->sync($request->roles);
-
-
-       // User::find($id)->roles()->sync([$request->role_id]);
+        if( $request->roles != null){ 
+        $usur = User::findOrFail($id);
+        $usur->roles()->sync($request->roles);
+        }else{
+            $rols = array();
+           // dd($rols);
+            $usur->roles()->sync($rols);  
+        }
         return redirect("/usuarios");
     }
 

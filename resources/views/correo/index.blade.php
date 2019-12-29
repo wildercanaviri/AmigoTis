@@ -11,7 +11,7 @@
 
     <form id="formularioBuscadorCartas" action="/correo"  method="get">
       <div style="margin-left: 55px; background-color: white; width: 220px;">  
-        <input id="buscar" name="buscar" type="text" placeholder="Buscar carta" aria-describedby="buscador" style="border: 0px;">
+        <input id="buscar" name="buscar"  type="text" placeholder="Buscar carta" aria-describedby="buscador" style="border: 0px;">
         <button type="submit" style=" background-color: white;">
           <img id="lupa" src="{{asset('assets/img/lupa.png')}}" height="25px" width="30px"/>
         </button>

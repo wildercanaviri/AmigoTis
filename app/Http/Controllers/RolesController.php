@@ -132,7 +132,6 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
       $rol = Role::findOrFail($id);
-        dd($request->permisos);
         $rol->permissions()->sync($request->permisos);
         return redirect("/roles"); 
     }
