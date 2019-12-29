@@ -22,6 +22,20 @@
         font-weight: bolder;
         }
 */
+input:valid {
+ 
+     border-color:#2ecc71;
+     border-width: 1px;
+     border-style: solid;
+ 
+}
+input:invalid{
+     border-color:#E31010;
+     border-width: 1px;
+     border-style: solid;
+ 
+}
+
         #idCampo{
             color: white;
             font-weight: bold;

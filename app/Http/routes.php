@@ -109,17 +109,15 @@ Route::resource('/roles',"RolesController");
 
     Route::post('cambiar_leido',"CartasController@cambiar_a_leido");
    
-   Route::get('/configuracion/eliminar',"CuentaUsuarioController@eliminar");
    Route::post('/configuracion/eliminar',"CuentaUsuarioController@eliminar");
 
-     Route::get('/configuracion/usuario',"CuentaUsuarioController@actualizar");
    Route::post('/configuracion/usuario',"CuentaUsuarioController@actualizar");
 
    Route::get('/informacionPersonal',"CuentaUsuarioController@informacionPersonal");
+   
    Route::post('/informacionPersonal/editar',"CuentaUsuarioController@update");
    Route::get('/notificaciones',"CuentaUsuarioController@notificaciones");
 
-   Route::get('correo/generarNuevaInformacion', "CorreoController@generarNuevaInformacion");
    Route::post('correo/generarNuevaInformacion', "CorreoController@generarNuevaInformacion");
 
 

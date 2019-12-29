@@ -15,8 +15,19 @@
    $("#datos_formulario").validate();
 
  });
-  
+
+$(function(){
+    $("#fecha_nac").datepicker({
+       dateFormat: 'dd/mm/yy', 
+       changeMonth: true,
+       changeYear: true,
+        yearRange: '-100:+0'
+    });
+
+
+});  
 </script>
+
 
 <form id="datos_formulario" action="/usuarios" method="post" style="background: transparent; width: 90%;" onsubmit="return validar();">
   <table style="font-size: 16px;font-weight: bold; background: transparent; width: 90%;margin: 20px auto;">
@@ -24,29 +35,31 @@
     <tr>
       <td id="idCampo">Nombre: </td>
       <td>
-        <input type="text" name="nom_usu" placeholder="Nombre" id="nom_usu"  required pattern="[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,15}"
-               title="Solo se admiten caracteres alfabéticos. Rango válido 3-15" >
+        <input type="text" name="nom_usu" placeholder="Nombre" id="nom_usu" 
+              pattern="[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,15}"
+               title="Solo se admiten caracteres alfabéticos. Rango válido 3-15" required>
         
           {{csrf_field()}}
       </td>
 
       <td id="idCampo">Usuario: </td>
       <td>
-        <input type="text" name="usuario">
+        <input type="text" name="usuario" placeholder="Nombre usuario" pattern="[a-zA-Z0-9áéíóú ,.'-]{2,64}" required>
       </td>
 
     </tr>
     <tr>
       <td id="idCampo">Apellido: </td>
       <td>
-        <input type="text" name="ape_usu" pattern="[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,15}" title="Solo se admiten caracteres alfabéticos. Rango válido 3-15" >
+        <input type="text" name="ape_usu" placeholder="Apellido"
+         pattern="[a-zA-Záéíóú ,.'-]{2,64}" title="Solo se admiten caracteres alfabéticos." required>
       </td>
 
       <td id="idCampo">Contraseña: </td>
       <td>
         <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña"
-                          pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" required title="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
-      NO puede tener otros símbolos.">
+              pattern="[A-Za-z0-9!?-]{5,20}" required title="La contraseña debe tener al entre 5 y 8 
+              NO puede tener otros símbolos.">
       </td>
 
 
@@ -55,25 +68,23 @@
     <tr>
       <td id="idCampo">Correo: </td>
       <td>
-        <input type="email" name="correo"  pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required>
+        <input type="email" name="correo" placeholder="Correo" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required>
       </td>
 
       <td id="idCampo">Confirmar Contraseña: </td>
       <td>
         <input type="password" name="confirmcontrasenia" id="confirmcontrasenia" placeholder="Confirmar Contraseña"
-                        pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" title=" al menos una minúscula y al menos una mayúscula.
-      NO puede tener otros símbolos." required  >
+                        pattern="[A-Za-z0-9!?-]{5,8}" title="La contraseña debe tener al entre 5 y 8 
+              NO puede tener otros símbolos." required>
       </td>
 
-
-
     </tr>
-
-
     <tr>
       <td id="idCampo">Fecha nacimiento: </td>
       <td>
-        <input type="date" name="fecha_nac" min="1550-02-20" max="2015-04-24">
+
+        <input type="text" name="fecha_nac" id="fecha_nac">
+     
       </td>
 
       <td id="idCampo"><span id="error1" style="margin-left: 50px;"></span></td>
@@ -83,7 +94,7 @@
     <tr>
       <td id="idCampo">Telefono: </td>
       <td>
-        <input type="tel" name="tel_usu" title="Solo caracteres numéricos " title="Solo caracteres numéricos ">
+        <input type="tel" pattern="[0-9]{6,9}" name="tel_usu" title="Solo caracteres numéricos " title="Solo caracteres numéricos ">
       </td>
 <!--
       <td id="idCampo">Rol</td>
@@ -108,18 +119,8 @@
   </table>
 </form>
 
-
-
-
-
-
-
-
-
-  
 <script type="text/javascript">
       
-  
 
   function validar()
   {
@@ -141,8 +142,6 @@
   }
 
 
-
-
   $(document).ready(function(){
 
     $('#confirmcontrasenia').keyup(function(){
@@ -161,26 +160,18 @@
      }
 
      if (pas2=="") {
-
         
             $('#error1').text("no puede estar en blanco").css("color","rgb(255,192,0)");
      }
      
-
-
   });
-
 
 });
 
-
-
-  
-
-
-
 </script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 @endsection
 @endif

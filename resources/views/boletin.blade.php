@@ -12,11 +12,7 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/estilo-plantilla.css')}}">
-        
-            body{
-                background-image: url('{{asset('assets/img/fondo.png')}}');
-            }
-        </style>
+      
         <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
     </head>
     <body>
