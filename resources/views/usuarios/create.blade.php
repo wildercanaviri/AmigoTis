@@ -89,7 +89,7 @@ $(function(){
       <td id="idCampo">Fecha nacimiento: </td>
       <td>
 
-        <input type="text" name="fecha_nac" id="fecha_nac">
+        <input type="text" class="form-control" name="fecha_nac" id="fecha_nac">
      
       </td>
 

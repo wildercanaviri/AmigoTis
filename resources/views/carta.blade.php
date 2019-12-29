@@ -68,6 +68,7 @@
                     </ul>
                   </div>
                 </nav> 
+                 <form action="/carta" method="post" enctype="multipart/form-data" name="form1" >
         <div class="panelIzquierda">
          
            <div  id="cajaimagen" ondragenter="return enter(event)" ondragleave="return leave(event)" 
@@ -104,7 +105,7 @@
       
            <div class="panelCentral">
         
-         <form action="/carta" method="post" enctype="multipart/form-data" name="form1" >
+        
         {{csrf_field()}}
          <input type="file"  class= "eligir_archivos" name="mi_imagen[]" id="file-upload" multiple="true" style="color: white;margin-left: 20px;margin-bottom: 20px; ">
          <div class="contenedorPerrito" >
@@ -138,6 +139,7 @@
               <output id="list" for="mi:_imagen[]"></output>
             </section>
       </form>
+
       </div>
        
             <div style="position: absolute; right: 120px; top: 320px;">

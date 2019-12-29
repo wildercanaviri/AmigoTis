@@ -3,11 +3,13 @@
   @include("../usuarios/menu")
 @endsection
 @section("contenido")
+
  <div class="container">
   <div class="row">
     <from>
     <div class="form-group" class="col-6" >
       <label for="nombre_usu" style="color: white;">Nombre de Usuario</label>
+    
       <input type="text" class="form-control" id="nombre_usu" readonly placeholder = "{{$usuario->nom_usu}}">
     </div>
     <div class="form-group" class="col-6">
@@ -35,5 +37,5 @@
    </from>
    </div> 
   </div>
-    
+  
 @endsection
