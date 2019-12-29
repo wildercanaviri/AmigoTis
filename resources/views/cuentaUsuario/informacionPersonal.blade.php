@@ -13,7 +13,7 @@
 
 $(function(){
     $("#fecha_nac").datepicker({
-       dateFormat: 'dd/mm/yy', 
+       dateFormat: 'yy-dd-mm', 
        changeMonth: true,
        changeYear: true,
         yearRange: '-100:+0'
