@@ -3,6 +3,7 @@
 @else
 @extends("../layout/plantilla")
 @section("cabecera")
+ @include("../cuentaUsuario/menu")
 @endsection
 @section("contenido")
 

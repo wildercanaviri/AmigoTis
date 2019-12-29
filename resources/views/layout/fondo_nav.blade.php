@@ -19,6 +19,7 @@
 
         <!--Boostrap-JS-->
         <script type="text/javascript" src="{!! asset('assets/js/bootstrap.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('assets/js/bootstrap.min.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/util.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/scrollspy.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('assets/js/jquery-3.4.1.min.js') !!}"></script>
@@ -70,13 +71,15 @@
         </button>
 
         <div class="dropdown-menu" style="background-color: #C0FFA4;border-radius: 0px; ">
-          <a class="dropdown-item" href="http://localhost:8000/configuracion" style="font-size: 15px;color: black;">
+          <a class="dropdown-item" href="/configuracion"
+          style="font-size: 15px;color: black;">
           Configuración de mi Cuenta</a>
           
-          <a class="dropdown-item" href="http://localhost:8000/informacionPersonal" style="font-size: 15px;color: 
-            black;border-style: solid;">Información Personal</a>
+          <a class="dropdown-item" href="/informacionPersonal" 
+          style="font-size: 15px;color: 
+          black;border-style: solid;">Información Personal</a>
             
-          <a class="dropdown-item" href="http://localhost:8000/notificaciones" style="font-size: 15px;color: black;border-style: solid;">
+          <a class="dropdown-item" href="/notificaciones" style="font-size: 15px;color: black;border-style: solid;">
             Notificaciones
 
            @php
@@ -94,26 +97,22 @@
 
             }
 
-           if($conta==0)
+           if($conta!=0)
            {
-              
-             
-           }else
-           {
-              echo("<h5 style='display: inline;'> $conta</h5>");  
+              echo("<h5 style='display: inline;'> $conta</h5>");
            }
-
        @endphp 
 
           </a>
           <div class="dropdown-divider" style="border-style: solid;"></div>
-          <a class="dropdown-item" href="http://localhost:8000/logout" style="font-size: 15px;color: black;">Cerrar Sesión</a>
+          <a class="dropdown-item" href="/logout" style="font-size: 15px;color: black;">Cerrar Sesión</a>
         </div>
     </div>
     
     <a style="background-color: white;" href="/notificaciones">
 
-      <button type="button" class="btn btn-success" data-toggle="modal" onclick="location.href='http://localhost:8000/login'" style= "border:0px; padding: 0px; margin-right: -20px;"><img src="{{asset('assets/img/notificacion.jpg')}}" height="35px" width="45px"/></button>
+      <button type="button" class="btn btn-success" data-toggle="modal" 
+      onclick="location.href='/login'" style= "border:0px; padding: 0px; margin-right: -20px;"><img src="{{asset('assets/img/notificacion.jpg')}}" height="35px" width="45px"/></button>
 
 
       @php
@@ -132,12 +131,7 @@
            {  
              echo("<h5 style='color:bold; display: inline; color: red;'> $conta</h5>");
            }
-
        @endphp 
-
-
-
-
      </a>
   @endif
 

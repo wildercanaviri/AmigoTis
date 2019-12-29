@@ -50,6 +50,9 @@ class CuentaUsuarioController extends Controller
 
     public function actualizar(Request $request)
     {   
+         $notificaciones=Notificacion::Notificacion("0")->paginate(10);
+        $id=$request->id;
+        
 
         $id=$request->id;
         
@@ -58,16 +61,18 @@ class CuentaUsuarioController extends Controller
         'password'=>crypt($request->password,''),
          
          ]);
+
+        return view('cuentaUsuario.configuracion',compact("notificaciones"));
+    
          /*if( $rol = 'administrador'){
             return view('welcome',compact("user","rol"));
             } 
             if($rol != 'administrador'){
             return view('usuarioGeneral.perfil' , compact("user","rol"));
             }*/
-            return redirect("configuracion"); 
     }
 
-    public function update(Request $request)
+    public function actualizar_datos(Request $request)
     {   
         $notificaciones=Notificacion::Notificacion("0")->paginate(10);
         $id=$request->id;
