@@ -115,7 +115,7 @@ class PermisosController extends Controller
                 $roles[] = $aux;
             }
         }
-        dd($roles);
+    
        return view("permisos.asignar",compact("permisos","roles","notificaciones"));
     
     }

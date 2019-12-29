@@ -85,11 +85,6 @@ class UsersController extends Controller
         $claveConf=$request->confirmcontrasenia;
 
         if ($clave==$claveConf) {
-
-            
-        
-
-
         $usuarios->password=crypt($clave,'');
         $usuarios->save();
        
@@ -132,6 +127,7 @@ class UsersController extends Controller
        $notificaciones=Notificacion::Notificacion("0")->paginate(10);
 
         if(\Auth::user()->can('editar_usuario')==false){
+
             return view("errors.403",compact("notificaciones"));
         }
     /*
@@ -143,7 +139,12 @@ class UsersController extends Controller
         //$notificaciones=Notificacion::Notificacion("0")->paginate(10);
         $roles=Role::all();
         $usuario=User::findOrFail($id);
-        return view("usuarios.edit",compact("usuario","notificaciones"));
+        $rols = array();
+        foreach ($usuario->roles as $rol) {
+            $rols[] = $rol->name;
+        }
+        
+        return view("usuarios.edit",compact("usuario","notificaciones","rols","roles"));
     }
 
     /**
@@ -165,6 +166,10 @@ class UsersController extends Controller
         'fecha_nac'=>$request->fecha_nac,
         'tel_usu'=>$request->tel_usu,
          ]);
+        // $usur = User::findOrFail($id);
+        
+         //$usur->roles()->sync($request->roles);
+
 
        // User::find($id)->roles()->sync([$request->role_id]);
         return redirect("/usuarios");
