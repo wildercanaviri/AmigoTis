@@ -47,22 +47,22 @@
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/inicio">Inicio</a>
+                        <a class="nav-link" href="/inicio">Inicio</a>
                       </li>
                       <li class="nav-item active">
-                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/carta" style="text-decoration: underline;">Escribe tu Carta<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/carta" style="text-decoration: underline;">Escribe tu Carta<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/boletin">Boletín</a>
+                        <a class="nav-link" href="/boletin">Boletín</a>
                       </li>
                       @if (Auth::guest())
                         
                     @else
                        <li class="nav-item">
-                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/usuarios">Usuarios</a>
+                        <a class="nav-link" href="/usuarios">Usuarios</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://sublimeprojects.hosting.cs.umss.edu.bo/roles">Roles</a>
+                        <a class="nav-link" href="/roles">Roles</a>
                       </li>
                     @endif
                     </ul>

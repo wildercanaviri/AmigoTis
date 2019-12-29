@@ -1,32 +1,31 @@
 @extends("../layout/plantilla")
 @section("cabecera")
   @include("../roles/menu")
-  <h2 
-  >ESTA ES LA VISTA DE AMINISTRADOR-PESTAÑA Roles/Editar Roles</h2> 
+  <br> 
 @endsection
 @section("contenido")
 
 <form action="/roles/{{$rol->id}}" method="post" >
     {{csrf_field()}}
     <input type="hidden" name="_method" value="PUT">
-    <table>
+    <table style="background-color: transparent; margin-top: 30px;">
     <tr>
-    <td>Rol</td>
+    <td id="idCampo">Rol</td>
     <td>
-      <select name="role_id" >
+      <select class="form-control" name="role_id" >
           <option value="{{$rol->id}}">{{$rol->name}} </option>
       </select>
     </td>
     </tr>
      
     <tr>
-    <td>Permisos</td>
+    <td  id="idCampo">Permisos</td>
       <td>
         @foreach($permisos as $permiso)
         
-        <label for="permisos">
+        <label id="idCampo" for="permisos">
             <input type="checkbox" id="permiso" name="permisos[]" value="{{$permiso->id}}"
-            {{in_array($permiso->name,$permis)?"checked":""}}>{{$permiso->name}}
+            {{in_array($permiso->name,$permis)?"checked":""}} style="position: relative !important; visibility: visible !important; margin-left: 20px; width: 20px; height: 20px;">{{$permiso->name}}
         </label>
         <br>
         @endforeach
