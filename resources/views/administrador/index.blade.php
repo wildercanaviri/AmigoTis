@@ -73,20 +73,20 @@
                         <a class="nav-link" href="http://localhost:8000/inicio" style="text-decoration: underline;">Inicio<span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost:8000/correo">Cartas de niños</a>
+                        <a class="nav-link" href="/correo">Cartas de niños</a>
                       </li>
                       
                       <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/usuarios">Usuarios</a>
+                        <a class="nav-link" href="/usuarios">Usuarios</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost:8000/roles">Roles</a>
+                        <a class="nav-link" href="/roles">Roles</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost:8000/permisos">Permisos</a>
+                        <a class="nav-link" href="/permisos">Permisos</a>
                       </li>
                       <li class="nav-item ">
-                        <a class="nav-link" href="http://localhost:8000/crearBoletin">Edición de Boletines</a>
+                        <a class="nav-link" href="/crearBoletin">Edición de Boletines</a>
                       </li>
                     </ul>
                   </div>

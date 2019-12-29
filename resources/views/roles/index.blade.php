@@ -32,9 +32,9 @@
              </td>
             <td> 
               
-                <a href="http://localhost:8000/roles/ <?php echo $role->id; ?>">Ver</a>
-                <a href="http://localhost:8000/roles/ <?php echo $role->id; ?> /edit">Editar</a>
-                <a href="http://localhost:8000/roles/delete/ <?php echo $role->id; ?>">Eliminar</a></td>
+                <a href="/roles/ <?php echo $role->id; ?>">Ver</a>
+                <a href="/roles/ <?php echo $role->id; ?> /edit">Editar</a>
+                <a href="/roles/delete/ <?php echo $role->id; ?>">Eliminar</a></td>
             
              
         </tr>
