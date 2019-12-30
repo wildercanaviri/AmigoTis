@@ -48,14 +48,15 @@
   </section>
 </div>
 
- @if(Session::has('mensaje')) 
+ @if(Session::has('mensaje_creado')) 
    <div class="alert alert-info alert-dismissible fade show" role="alert">
-  <strong>Aviso </strong>{{session('mensaje')}}
+  <strong>Aviso </strong>{{session('mensaje_creado')}}
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
  @endif 
+ s
  
     <table border="1" class="table table-hover">
         <thead class="bg-warning">
