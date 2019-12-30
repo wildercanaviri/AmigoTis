@@ -11,6 +11,7 @@ use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
 use App\Notificacion;
+use Session;
 class RolesController extends Controller
 {
     /**
@@ -67,13 +68,36 @@ class RolesController extends Controller
         if(\Auth::user()->can('crear_rol')==false){
             return view("errors.403",compact("notificaciones"));
         }
-        $roles=new Role();
-        $roles->name=$request->nom_rol;
-        $roles->slug=$request->nom_rol;
-        $roles->description=$request->descripcion;  
-        $roles->save();
-        return redirect("/roles");
-    }
+        
+        //VALIDAR QUE ROLES NO REPETIDOS
+        $ok=true;
+        $roles=Role::all();
+        $nom_rol=$request->nom_rol;
+            foreach ($roles as $rol) {
+                if($nom_rol==$rol->name){
+                    $ok=false;
+                }
+            }
+    
+        if($ok==true){
+            $rol=new Role();
+             $rol->name=$nom_rol;
+             $rol->slug=$nom_rol;
+             $rol->description=$request->descripcion;  
+             $rol->save();
+              $roles=Role::all();
+            Session::flash('rol_creado','Un nuevo rol creado');
+            return view("roles.index",compact("roles","notificaciones"));
+        }else{
+            Session::flash('rol_error','Este nombre de rol ya esta creado');
+            return view('roles.create',compact("notificaciones"));
+        }
+     
+    //$roles->name=$request->nom_rol;
+
+        //FIN VALIDAR        
+      
+}
 
     /**
      * Display the specified resource.

@@ -12,6 +12,16 @@
                 background-size: contain; height: 40px; width: 143px;margin-left: 200px;margin-bottom: 10px; margin-top: 30px;"  />
     <input type="submit" class="form-control" value="" onclick = "location='/permisos/asignacion'" style="background-image: url('{{asset('assets/img/botonAsignarPermisos.png')}}'); background-size: cover; 
                 height: 40px; width: 200px;margin-left: 200px;margin-bottom: 10px; margin-top: 30px;"  >
+
+  @if(Session::has('rol_creado')) 
+   <div class="alert alert-info alert-dismissible fade show" role="alert">
+  <strong>Aviso </strong>{{session('rol_creado')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ @endif 
+
     <table border="1" class="table table-hover">
       <thead class="bg-warning">
         <td>Código</td>

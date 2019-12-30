@@ -8,6 +8,15 @@
 @endsection
 @section("contenido")
 
+@if(Session::has('rol_error')) 
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Aviso </strong>{{session('rol_error')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ @endif 
+ 
 <form action="/roles" method="post" style="background: transparent; width: 90%;">
   <table style="font-size: 16px;font-weight: bold; background: transparent; width: 90%;margin: 20px auto;">
 

@@ -165,13 +165,7 @@ class UsersController extends Controller
         if(\Auth::user()->can('editar_usuario')==false){
             return view("errors.403",compact("notificaciones"));
         }
-    /*
-        if($request->user() == null){
-            return view("auth.login");
-        }else{ 
-        $request->user()->autorizeRoles(['administrador']);
-        }*/
-        //$notificaciones=Notificacion::Notificacion("0")->paginate(10);
+    
         $roles=Role::all();
         $usuario=User::findOrFail($id);
         return view("usuarios.edit",compact("usuario","notificaciones"));
