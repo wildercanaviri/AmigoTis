@@ -35,6 +35,24 @@ $(function(){
 });  
 </script>
 
+ @if(Session::has('error_email')) 
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Aviso </strong>{{session('error_email')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ @endif 
+ @if(Session::has('error_user')) 
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Aviso </strong>{{session('error_user')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ @endif 
+
+
 
 <form id="datos_formulario" action="/usuarios" method="post" style="background: transparent; width: 90%;" onsubmit="return validar();">
   <table   style="font-size: 16px;font-weight: bold; background: transparent; width: 90%;margin: 20px auto;">
@@ -42,24 +60,39 @@ $(function(){
     <tr>
       <td id="idCampo">Nombre: </td>
       <td>
+<<<<<<< HEAD
         <input type="text"class="form-control"  name="nom_usu" placeholder="Nombre" id="nom_usu" 
               pattern="[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,15}"
                title="Solo se admiten caracteres alfabéticos. Rango válido 3-15" required>
+=======
+        <input type="text" name="nom_usu" placeholder="Nombre" id="nom_usu" 
+              pattern="[a-zA-ZáéíóúñÁÉÍÓÚÑ]{3,15}" 
+               title="Solo se admiten caracteres alfabéticos. Rango válido 3-15" value ="<?php echo $datos['nom_usu']; ?>" required>
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
         
           {{csrf_field()}}
       </td>
 
       <td id="idCampo">Usuario: </td>
       <td>
+<<<<<<< HEAD
         <input class="form-control" type="text" name="usuario" placeholder="Nombre usuario" pattern="[a-zA-Z0-9áéíóú ,.'-]{2,64}" required>
+=======
+        <input type="text" name="usuario" placeholder="Nombre usuario" pattern="[a-zA-Z0-9áéíóú ,.'-]{2,64}" value ="<?php echo $datos['usuario']; ?>" required>
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
       </td>
 
     </tr>
     <tr>
       <td id="idCampo">Apellido: </td>
       <td>
+<<<<<<< HEAD
         <input type="text" class="form-control"  name="ape_usu" placeholder="Apellido"
          pattern="[a-zA-Záéíóú ,.'-]{2,64}" title="Solo se admiten caracteres alfabéticos." required>
+=======
+        <input type="text" name="ape_usu" placeholder="Apellido"
+         pattern="[a-zA-Záéíóú ,.'-]{2,64}" title="Solo se admiten caracteres alfabéticos." value ="<?php echo $datos['ape_usu']; ?>" required>
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
       </td>
 
       <td id="idCampo">Contraseña: </td>
@@ -75,7 +108,11 @@ $(function(){
     <tr>
       <td id="idCampo">Correo: </td>
       <td>
+<<<<<<< HEAD
         <input type="email" class="form-control" name="correo" placeholder="Correo" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" required>
+=======
+        <input type="email" name="correo" placeholder="Correo" pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$" value ="<?php echo $datos['correo']; ?>" required>
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
       </td>
 
       <td id="idCampo">Confirmar Contraseña: </td>
@@ -89,7 +126,13 @@ $(function(){
     <tr>
       <td id="idCampo">Fecha nacimiento: </td>
       <td>
+<<<<<<< HEAD
           <input type="text" class="form-control" name="fecha_nac" id="fecha_nac">
+=======
+
+        <input type="text" class="form-control" name="fecha_nac" id="fecha_nac" value ="<?php echo $datos['fecha_nac']; ?>">
+     
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
       </td>
 
       <td id="idCampo"><span id="error1" style="margin-left: 50px;"></span></td>
@@ -99,7 +142,11 @@ $(function(){
     <tr>
       <td id="idCampo">Telefono: </td>
       <td>
+<<<<<<< HEAD
         <input class="form-control"  type="tel" pattern="[0-9]{6,9}" name="tel_usu" title="Solo caracteres numéricos " title="Solo caracteres numéricos ">
+=======
+        <input type="tel" pattern="[0-9]{6,9}" name="tel_usu" title="Solo caracteres numéricos " title="Solo caracteres numéricos " value ="<?php echo $datos['tel_usu']; ?>">
+>>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
       </td>
 <!--
       <td id="idCampo">Rol</td>
