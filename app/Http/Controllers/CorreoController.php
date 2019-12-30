@@ -127,6 +127,8 @@ class CorreoController extends Controller
         for($i=0;$i < count($todas_cartas);$i++){
            $cartas[]=Carta::GetCarta($todas_cartas[$i])->get();
         }
+        
+        //dd($cartas == []);
         return view('correo.generarContenido', compact("cartas","notificaciones"));
     }
     public function InformacionObtenida(Request $request){

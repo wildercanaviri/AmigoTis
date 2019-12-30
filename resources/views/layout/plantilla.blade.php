@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AMIGO MENSAJERO</title>
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
-    
+   
     <style>
     #campos{
         width: 30%;
