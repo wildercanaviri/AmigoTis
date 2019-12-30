@@ -1,19 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
-
 use App\User;
-
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
 use App\Notificacion;
 use Session;
-
 class UsersController extends Controller
 {
     /**
@@ -35,7 +28,6 @@ class UsersController extends Controller
         $usuarios=User::buscar($request->buscar)->orderBy('id','DESC')->paginate(10);
         return view("usuarios.index",compact("usuarios","notificaciones"));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -49,7 +41,6 @@ class UsersController extends Controller
         }else{ 
         $request->user()->autorizeRoles(['administrador']);
         }*/
-
         $datos = [
         "nom_usu" => "",
         "ape_usu" => "",
@@ -58,7 +49,6 @@ class UsersController extends Controller
         "tel_usu" =>"",
         "usuario"=>""
         ];
-
         $notificaciones=Notificacion::Notificacion("0")->paginate(10);
      if(\Auth::user()->can('crear_usuario')==false){
             return view("errors.403",compact("notificaciones"));
@@ -66,7 +56,6 @@ class UsersController extends Controller
         $roles=Role::all();
         return view("usuarios.create",compact("roles","datos","notificaciones"));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -83,8 +72,6 @@ class UsersController extends Controller
         if(\Auth::user()->can('crear_usuario')==false){
             return view("errors.403",compact("notificaciones"));
         }
-
-
         $usuario=new User();
         
         $usuario->nom_usu=$request->nom_usu;
@@ -93,30 +80,16 @@ class UsersController extends Controller
         $usuario->tel_usu=$request->tel_usu;
         
         $clave = $request->contrasenia;
-
         $claveConf=$request->confirmcontrasenia;
-
         if ($clave==$claveConf) {
-<<<<<<< HEAD
-        $usuarios->password=crypt($clave,'');
-        $usuarios->save();
-        Session::flash('mensaje', 'El usuario se ha creado con exito');
-        return redirect("/usuarios");
-       }
-       else
-       {
-=======
-
         $usuario->password=crypt($clave,'');
         
         //VALIDAR USUARIOS CON CORREO,USUARIO REPETIDO 
         $user_repetido=false;
         $email_repetido=false;
-
         $todos_usuarios=User::all();
         $email=$request->correo;
         $username=$request->usuario;
-
         foreach ($todos_usuarios as $usu) {
             $usu_email= $usu->email;
             $usu_nom= $usu->username;
@@ -124,13 +97,10 @@ class UsersController extends Controller
             if($usu_email==$email){
                 $email_repetido=true;   
             }
-
             if($usu_nom==$username){
                 $user_repetido=true;
             }
-
         }
-
         $datos=array();
         
         $datos = [
@@ -142,19 +112,16 @@ class UsersController extends Controller
         "usuario"=>$request->usuario
         ];
         $roles=Role::all();
-
         if($user_repetido==true && $email_repetido==true){
                 Session::flash('error_user', 'Este nombre de usuario no esta disponible');
                 Session::flash('error_email', 'Este correo no esta disponible');
                 return view('usuarios.create',compact("datos","roles","notificaciones"));
-
         }else if($user_repetido==true){
                 Session::flash('error_user', 'Este nombre de usuario no esta disponible');
-          //      return view('usuarios.create');
-
+                return view('usuarios.create',compact("datos","roles","notificaciones"));
         }else if($email_repetido==true){
                 Session::flash('error_email','Este correo no esta disponible');
-            //    return view('usuarios.create');
+                return view('usuarios.create',compact("datos","roles","notificaciones"));
         }else{
               Session::flash('mensaje_creado', 'El usuario se ha creado con exito');
               $usuario->email=$email;
@@ -163,15 +130,12 @@ class UsersController extends Controller
               return redirect("/usuarios");
         }
        //FIN VALIDAR CORREO
-
        }else{
        
->>>>>>> 3302b17bc7686513613bf7c8118df6163ba06c73
         return "las contraseñas no coinciden";
        
        }
     }
-
     /**
      * Display the specified resource.
      *
@@ -181,7 +145,6 @@ class UsersController extends Controller
     public function show($id)
     {
        $notificaciones=Notificacion::Notificacion("0")->paginate(10);
-
         if(\Auth::user()->can('ver_usuario')==false){
             return view("errors.403",compact("notificaciones"));
         }
@@ -190,7 +153,6 @@ class UsersController extends Controller
         $role= $usuario->roles;
        return view("usuarios.show",compact("usuario","role","notificaciones"));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -200,9 +162,7 @@ class UsersController extends Controller
     public function edit($id, Request $request)
     {
        $notificaciones=Notificacion::Notificacion("0")->paginate(10);
-
         if(\Auth::user()->can('editar_usuario')==false){
-
             return view("errors.403",compact("notificaciones"));
         }
     /*
@@ -212,17 +172,10 @@ class UsersController extends Controller
         $request->user()->autorizeRoles(['administrador']);
         }*/
         //$notificaciones=Notificacion::Notificacion("0")->paginate(10);
-
         $roles=Role::all();
         $usuario=User::findOrFail($id);
-        $rols = array();
-        foreach ($usuario->roles as $rol) {
-            $rols[] = $rol->name;
-        }
-        
-        return view("usuarios.edit",compact("usuario","notificaciones","rols","roles"));
+        return view("usuarios.edit",compact("usuario","notificaciones"));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -242,17 +195,9 @@ class UsersController extends Controller
         'fecha_nac'=>$request->fecha_nac,
         'tel_usu'=>$request->tel_usu,
          ]);
-        if( $request->roles != null){ 
-        $usur = User::findOrFail($id);
-        $usur->roles()->sync($request->roles);
-        }else{
-            $rols = array();
-           // dd($rols);
-            $usur->roles()->sync($rols);  
-        }
+       // User::find($id)->roles()->sync([$request->role_id]);
         return redirect("/usuarios");
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -262,7 +207,6 @@ class UsersController extends Controller
     public function destroy($id)
     {
        $notificaciones=Notificacion::Notificacion("0")->paginate(10);
-
         if(\Auth::user()->can('eliminar_usuario')==false){
             return view("errors.403",compact("notificaciones"));
         }
