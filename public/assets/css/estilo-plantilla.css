@@ -10,7 +10,7 @@ li{
 }
 
 .contenedorPerrito{
-                margin-top: 3   0px;
+                margin-top: 30px;
                 position: relative;
                 margin-left: -40px;
                 /*text-align: center;*/
@@ -46,6 +46,7 @@ li{
             
             #imagenPerrito{
                 margin-left: -60px;
+                height:200px; width:300px;
             }
             textarea{
                 /*border-width: medium;
@@ -73,6 +74,10 @@ li{
                 resize: none;
                 
             }
+            #cuaderno{
+                margin-top: -71px;
+                margin-left: -70px; width:82%; height:450px;
+            }
 .panelIzquierda{
     width: 250px;
     height: 68%;
@@ -87,10 +92,9 @@ li{
     display: inline-block;
 }
 #cajaimagen{
-    margin-top: 40px;
-    position : relative;
+    
     float:left;
-    width: 210px;
+    width: 180px;
     height: 250px;
     
     border-color: black;
@@ -122,6 +126,19 @@ img.imagen{
     resize: none;
 
 }
+#microfonoDiv{
+                position: absolute; right: 250px; top: 320px;
+            }
+ #microfono{
+                height:120px; width:120px;
+            }
+ #botonEnviar{
+                background-size: contain; 
+                height: 89px; width: 190px;
+                 margin-left: 50px; 
+                 position: absolute; 
+                 top: 520px; 
+            }
 #insertado{
     position:relative;
 }
@@ -148,7 +165,7 @@ img.imagen{
            }
             .eligir_archivos{
                position: absolute;
-                margin-top: 20px;
+                margin-top: 0px;
                 left: 50px;
                
             }
@@ -188,3 +205,578 @@ img.imagen{
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media (min-width: 830px) and (max-width: 1199px) { 
+ body{
+         width: 100%;
+    }
+  .contenedorPerrito{
+      margin-top: 10px;
+      position: relative;
+
+      /*IMPORTANTE SOLO MOVER ESTO PARA CAMBIAR LAS TRANSFORMADAS*/
+      margin-left: -110px;
+      /*text-align: center;*/   
+          }
+
+    .centradoMiNombreEs{
+        position: absolute;
+        transform: translate(105%, -140%);
+    }
+    #imagenGlobito{   
+         position: absolute;
+        transform: translate(-40%,-25%);
+        width:200px;
+    }
+    .centrado2HolaSoyLucas{
+        position: absolute;      
+        transform: translate(310%,-430%);
+        color: black;
+        font-weight: bold;
+    }
+    
+    #imagenPerrito{
+        margin-left: -60px;
+        height:200px; width:300px;
+    }
+    textarea{
+        /*border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        border: 0px;
+        resize: none;*/
+
+    }
+    #texto{
+        font-size: 18px;
+        position: absolute;   
+        transform: translate(-110%, 3%);
+        background-color: transparent;
+         border: 0px;
+        resize: none;
+        width: 350px;
+    }
+    #cajaPerrito{
+        font-weight: bold;
+        border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        resize: none;
+    }
+    #cuaderno{
+        margin-top: -71px;
+        margin-left: -160px; width:82%; height:450px;
+    }
+.panelIzquierda{
+    width: 250px;
+    height: 68%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.panelCentral{
+    margin-top: 40px;
+    text-align: center;
+    width: 550px;
+    height: 68%;
+    display: inline-block;
+}
+#cajaimagen{
+    float:left;
+    width: 160px;
+    height: 220px;
+    border-color: black;
+    border-style: solid ;
+    background: white;
+    overflow: auto;
+    overflow: scroll;
+    overflow-x: hidden; 
+}
+img.imagen{
+    width: 120px;
+    height: 120px;
+}
+
+#clonado{
+    /*position: absolute;*/ 
+    position: absolute;
+    transform: translate(8%, -102%);
+    border-color: red;
+    border-style: solid ;
+    background: white;
+    /*left: 350px;
+    top: 540px ;*/
+    width: 360px;
+    height: 150px;
+    resize: none;
+}
+#insertado{
+    position:relative;
+}
+ .papelera {
+              background-image: url('{{asset('assets/img/basurero.png')}}');
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              float: left;
+              width: 120px;
+              height: 120px;
+              padding: 20px;    
+            margin-left: 30px; 
+            border-style: solid ;
+            border-style: solid ;
+            position : relative;
+           }
+            .eligir_archivos{
+                position: absolute;
+                margin-top: 0px;
+                left: 50px;
+            }
+            #microfonoDiv{
+                  margin-right: -60px;position: absolute; top: 320px;
+            }
+            #microfono{
+                height:110px; width:110px;
+            }
+            #botonEnviar{
+                background-size: contain; 
+                height: 89px; width: 190px;
+                 margin-left: 30px; 
+                 position: absolute; 
+                 top: 560px; 
+            }
+            }
+@media (max-width: 830px) { 
+    body{
+         width: 100%;
+    }
+  .contenedorPerrito{
+      margin-top: 5px;
+      position: relative;
+
+      /*IMPORTANTE SOLO MOVER ESTO PARA CAMBIAR LAS TRANSFORMADAS*/
+      margin-left: -110px;
+      /*text-align: center;*/   
+          }
+
+    .centradoMiNombreEs{
+        position: absolute;
+        transform: translate(118%, -128%);
+    }
+    #imagenGlobito{   
+         position: absolute;
+        transform: translate(-40%,-25%);
+        width:150px;
+    }
+    .centrado2HolaSoyLucas{
+        position: absolute;      
+        transform: translate(280%,-340%);
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    #imagenPerrito{
+        margin-left: -60px;
+        height:140px; width:220px;
+    }
+    textarea{
+        /*border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        border: 0px;
+        resize: none;*/
+
+    }
+    #texto{
+        font-size: 18px;
+        position: absolute;   
+        transform: translate(-110%, 3%);
+        background-color: transparent;
+         border: 0px;
+        resize: none;
+        width: 290px;
+    }
+    #cajaPerrito{
+        font-weight: bold;
+        border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        resize: none;
+        width: 150px;
+        height: 45px;
+    }
+    #cuaderno{
+        margin-top: -71px;
+        margin-left: -160px; width:82%; height:450px;
+    }
+.panelIzquierda{
+    width: 230px;
+    height: 68%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.panelCentral{
+    margin-top: 40px;
+    text-align: center;
+    width: 450px;
+    height: 68%;
+    display: inline-block;
+}
+#cajaimagen{
+    float:left;
+    width: 140px;
+    height: 200px;
+    border-color: black;
+    border-style: solid ;
+    background: white;
+    overflow: auto;
+    overflow: scroll;
+    overflow-x: hidden; 
+}
+img.imagen{
+    width: 100px;
+    height: 100px;
+}
+
+#clonado{
+    /*position: absolute;*/ 
+    position: absolute;
+    transform: translate(3%, -102%);
+    border-color: red;
+    border-style: solid ;
+    background: white;
+    /*left: 350px;
+    top: 540px ;*/
+    width: 300px;
+    height: 150px;
+    resize: none;
+}
+#insertado{
+    position:relative;
+}
+ .papelera {
+              background-image: url('{{asset('assets/img/basurero.png')}}');
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              float: left;
+              width: 100px;
+              height: 100px;
+              padding: 20px;    
+            margin-left: 20px; 
+            border-style: solid ;
+            border-style: solid ;
+            position : relative;
+           }
+            .eligir_archivos{
+                position: absolute;
+                margin-top: -40px;
+                left: 10px;
+            }
+            #microfonoDiv{
+                  margin-right: -180px;position: absolute; top: 320px;
+            }
+            #microfono{
+                height:110px; width:110px;
+            }
+            #botonEnviar{
+                background-size: contain; 
+                height: 79px; width: 169px;
+                 margin-left: 30px; 
+                 position: absolute; 
+                 top: 560px; 
+            }
+ }
+@media (max-width: 721px) { 
+     body{
+         width: 140%;
+    }
+  .contenedorPerrito{
+      margin-top: 5px;
+      position: relative;
+
+      /*IMPORTANTE SOLO MOVER ESTO PARA CAMBIAR LAS TRANSFORMADAS*/
+      margin-left: -110px;
+      /*text-align: center;*/   
+          }
+
+    .centradoMiNombreEs{
+        position: absolute;
+        transform: translate(118%, -128%);
+    }
+    #imagenGlobito{   
+         position: absolute;
+        transform: translate(-40%,-25%);
+        width:150px;
+    }
+    .centrado2HolaSoyLucas{
+        position: absolute;      
+        transform: translate(280%,-340%);
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    #imagenPerrito{
+        margin-left: -60px;
+        height:140px; width:220px;
+    }
+    textarea{
+        /*border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        border: 0px;
+        resize: none;*/
+
+    }
+    #texto{
+        font-size: 18px;
+        position: absolute;   
+        transform: translate(-110%, 3%);
+        background-color: transparent;
+         border: 0px;
+        resize: none;
+        width: 290px;
+    }
+    #cajaPerrito{
+        font-weight: bold;
+        border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        resize: none;
+        width: 150px;
+        height: 45px;
+    }
+    #cuaderno{
+        margin-top: -71px;
+        margin-left: -160px; width:82%; height:450px;
+    }
+.panelIzquierda{
+    width: 230px;
+    height: 68%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.panelCentral{
+    margin-top: 40px;
+    text-align: center;
+    width: 450px;
+    height: 68%;
+    display: inline-block;
+}
+#cajaimagen{
+    float:left;
+    width: 140px;
+    height: 200px;
+    border-color: black;
+    border-style: solid ;
+    background: white;
+    overflow: auto;
+    overflow: scroll;
+    overflow-x: hidden; 
+}
+img.imagen{
+    width: 100px;
+    height: 100px;
+}
+
+#clonado{
+    /*position: absolute;*/ 
+    position: absolute;
+    transform: translate(3%, -102%);
+    border-color: red;
+    border-style: solid ;
+    background: white;
+    /*left: 350px;
+    top: 540px ;*/
+    width: 300px;
+    height: 150px;
+    resize: none;
+}
+#insertado{
+    position:relative;
+}
+ .papelera {
+              background-image: url('{{asset('assets/img/basurero.png')}}');
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              float: left;
+              width: 100px;
+              height: 100px;
+              padding: 20px;    
+            margin-left: 20px; 
+            border-style: solid ;
+            border-style: solid ;
+            position : relative;
+           }
+            .eligir_archivos{
+                position: absolute;
+                margin-top: -40px;
+                left: 10px;
+            }
+            #microfonoDiv{
+                  margin-right: -340px;position: absolute; top: 320px;
+            }
+            #microfono{
+                height:110px; width:110px;
+            }
+            #botonEnviar{
+                background-size: contain; 
+                height: 79px; width: 169px;
+                 margin-left: 30px; 
+                 position: absolute; 
+                 top: 560px; 
+            }
+ }
+@media (max-width: 505px) {
+    body{
+         width: 300%;
+         height: 100%;
+    }
+  .contenedorPerrito{
+      margin-top: 5px;
+      position: relative;
+
+      /*IMPORTANTE SOLO MOVER ESTO PARA CAMBIAR LAS TRANSFORMADAS*/
+      margin-left: -110px;
+      /*text-align: center;*/   
+          }
+
+    .centradoMiNombreEs{
+        position: absolute;
+        transform: translate(118%, -128%);
+    }
+    #imagenGlobito{   
+         position: absolute;
+        transform: translate(-40%,-25%);
+        width:150px;
+    }
+    .centrado2HolaSoyLucas{
+        position: absolute;      
+        transform: translate(280%,-340%);
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    #imagenPerrito{
+        margin-left: -60px;
+        height:140px; width:220px;
+    }
+    textarea{
+        /*border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        border: 0px;
+        resize: none;*/
+
+    }
+    #texto{
+        font-size: 18px;
+        position: absolute;   
+        transform: translate(-110%, 3%);
+        background-color: transparent;
+         border: 0px;
+        resize: none;
+        width: 290px;
+    }
+    #cajaPerrito{
+        font-weight: bold;
+        border-width: medium;
+        border-color: black;
+        border-style: solid ;
+        resize: none;
+        width: 150px;
+        height: 45px;
+    }
+    #cuaderno{
+        margin-top: -71px;
+        margin-left: -160px; width:82%; height:450px;
+    }
+.panelIzquierda{
+    width: 230px;
+    height: 68%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.panelCentral{
+    margin-top: 40px;
+    text-align: center;
+    width: 450px;
+    height: 68%;
+    display: inline-block;
+}
+#cajaimagen{
+    float:left;
+    width: 140px;
+    height: 200px;
+    border-color: black;
+    border-style: solid ;
+    background: white;
+    overflow: auto;
+    overflow: scroll;
+    overflow-x: hidden; 
+}
+img.imagen{
+    width: 100px;
+    height: 100px;
+}
+
+#clonado{
+    /*position: absolute;*/ 
+    position: absolute;
+    transform: translate(3%, -102%);
+    border-color: red;
+    border-style: solid ;
+    background: white;
+    /*left: 350px;
+    top: 540px ;*/
+    width: 300px;
+    height: 150px;
+    resize: none;
+}
+#insertado{
+    position:relative;
+}
+ .papelera {
+              background-image: url('{{asset('assets/img/basurero.png')}}');
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+              float: left;
+              width: 100px;
+              height: 100px;
+              padding: 20px;    
+            margin-left: 20px; 
+            border-style: solid ;
+            border-style: solid ;
+            position : relative;
+           }
+            .eligir_archivos{
+                position: absolute;
+                margin-top: -40px;
+                left: 10px;
+            }
+            #microfonoDiv{
+                  margin-right: -340px;position: absolute; top: 320px;
+            }
+            #microfono{
+                height:110px; width:110px;
+            }
+            #botonEnviar{
+                background-size: contain; 
+                height: 79px; width: 169px;
+                 margin-left: 30px; 
+                 position: absolute; 
+                 top: 560px; 
+            }
+} 
+
+@media (max-width: 480px) {
+
+} 
