@@ -122,7 +122,8 @@
                 <!--  
                 <img src="{{asset('assets/img/botonEnviar.png')}}" height="80px" width="180px" onclick="alert('Se enviará la carta al Amigo Mensajero');" style="cursor: pointer; margin-left: 50px;">
                !-->
-                <input type="submit" name="EnviarCarta" value="" style="background-image: url('{{asset('assets/img/botonEnviar.png')}}'); " id="botonEnviar" onclick="if">
+                <input type="submit" name="EnviarCarta" value="" style="background-image: url('{{asset('assets/img/botonEnviar.png')}}'); " id="botonEnviar" onclick="if  data-toggle="modal" data-target="#exampleModalCenter">
+                @include("../cartaenviada")
               </div>
           </section> 
            <section id="clonado" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return clonar(event)" style="overflow: scroll;">

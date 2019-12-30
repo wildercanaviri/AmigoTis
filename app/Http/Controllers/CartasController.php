@@ -14,15 +14,18 @@ use App\Notificacion;
 
 class CartasController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+        $mostrar_modal = false;
         $notificaciones=Notificacion::Notificacion("0")->paginate(10);
-        return view('carta', compact("carta","notificaciones"));
+        return view('carta', compact("carta","notificaciones","mostrar_modal"));
     }
 
     /**
@@ -44,6 +47,7 @@ class CartasController extends Controller
     public function store(Request $request)
     {
 
+        $mostrar_modal = false;
         $notificacion=new Notificacion();
         $notificacion->contenido=$request->contenido;
        
@@ -51,10 +55,13 @@ class CartasController extends Controller
         $carta= new Carta();
         $carta->autor=$request->campo_nombre;
         $carta->contenido=$request->contenido;
+       
+        if(($request->contenido != null) || ($request->contenido != "") ){
+            $mostrar_modal = true;
+        }
+
         $carta->fecha=Carbon::now()->format('Y-m-d');
         $carta->hora=Carbon::now()->format('H:i:s');
-                   
- 
         $contenido=strtoupper($request->contenido);
         $palabra_texto=explode(" ", $contenido);
         $array_peligrosas = array("MATAR", "MUERTE", "MORIRME", "SANGRE","MATANZA","ASESINAR","APUÑALAR",
@@ -164,7 +171,7 @@ class CartasController extends Controller
             }
             
         }
-        return view('carta');
+        return view('carta',compact("mostrar_modal"));
     }
     
 
