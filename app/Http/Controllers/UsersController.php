@@ -174,7 +174,12 @@ class UsersController extends Controller
         //$notificaciones=Notificacion::Notificacion("0")->paginate(10);
         $roles=Role::all();
         $usuario=User::findOrFail($id);
-        return view("usuarios.edit",compact("usuario","notificaciones"));
+        $rols = array();
+        $roles = Role::all();
+        foreach ($usuario->roles as $rol) {
+            $rols[] = $rol->name;
+        }
+        return view("usuarios.edit",compact("usuario","notificaciones","rols","roles"));
     }
     /**
      * Update the specified resource in storage.
@@ -195,6 +200,10 @@ class UsersController extends Controller
         'fecha_nac'=>$request->fecha_nac,
         'tel_usu'=>$request->tel_usu,
          ]);
+         if($request->roles != null){
+            $usuario=User::findOrFail($id); 
+            $usuario->roles()->sync($request->roles);
+         }
        // User::find($id)->roles()->sync([$request->role_id]);
         return redirect("/usuarios");
     }
