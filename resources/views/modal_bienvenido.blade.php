@@ -1,6 +1,6 @@
  
 
-
+@if (Auth::guest())
 <!---->
  <div class="text-center">
                 <a href="#myModal" class="trigger-btn" data-toggle="modal">Bienvenido</a>
@@ -27,4 +27,9 @@
     </div>
   </div>
 </div>
-    
+@else
+<div class="text-center">
+  <a href="#myModal" class="trigger-btn" data-toggle="modal">Bienvenido</a>
+</div>   
+
+@endif

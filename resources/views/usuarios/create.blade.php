@@ -19,7 +19,13 @@
 
 $(function(){
     $("#fecha_nac").datepicker({
-       dateFormat: 'dd/mm/yy', 
+       dateFormat: 'yy-dd-mm', 
+        dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+      
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+      
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+        monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec" ],
        changeMonth: true,
        changeYear: true,
         yearRange: '-100:+0'
@@ -31,7 +37,7 @@ $(function(){
 
 
 <form id="datos_formulario" action="/usuarios" method="post" style="background: transparent; width: 90%;" onsubmit="return validar();">
-  <table style="font-size: 16px;font-weight: bold; background: transparent; width: 90%;margin: 20px auto;">
+  <table   style="font-size: 16px;font-weight: bold; background: transparent; width: 90%;margin: 20px auto;">
 
     <tr>
       <td id="idCampo">Nombre: </td>
@@ -83,8 +89,7 @@ $(function(){
     <tr>
       <td id="idCampo">Fecha nacimiento: </td>
       <td>
-        <input  id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-     
+          <input type="text" class="form-control" name="fecha_nac" id="fecha_nac">
       </td>
 
       <td id="idCampo"><span id="error1" style="margin-left: 50px;"></span></td>

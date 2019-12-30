@@ -43,7 +43,7 @@
         <tr>
           <td id="idCampo">Usuario</td>
           <td>
-            <select name="user_id">
+            <select class="form-control" name="user_id">
                 <option value="vacio">    </option>
               @foreach($usuarios as $usuario)
                

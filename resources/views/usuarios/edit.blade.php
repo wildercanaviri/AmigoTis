@@ -8,7 +8,7 @@
 <form action="/usuarios/{{$usuario->id}}" method="post">
   <div class="row " style="text-align: center;" >
     <div class= "col">
-  <table style="background-color: transparent;margin: auto 25%;">
+  <table style="background-color: transparent;">
 
 <tr>
 <td id="idCampo">Nombre: </td>

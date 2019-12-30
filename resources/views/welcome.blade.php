@@ -28,10 +28,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/boletin">Boletín</a>
-                      </li>
-                       <!-- Authentication Links -->
-                    
-                        
+                      </li>    
                     @else
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
@@ -62,7 +59,7 @@
       @endsection  
       @section("contenido")
 
-
+      @if (Auth::guest())
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -91,6 +88,9 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      @else
+      
+      @endif
       @endsection
       @section("pie_pagina")
 

@@ -11,7 +11,7 @@
     <tr>
     <td id="idCampo">Rol</td>
     <td>
-      <select name="role_id" >
+      <select class="form-control" name="role_id" >
           <option value="vacio">    </option>
         @foreach($roles as $rol)
           <option value="{{$rol->id}}">{{$rol->name}} </option>
@@ -27,7 +27,7 @@
         @foreach($permisos as $permiso)
         
         <label for="permisos" style="color: white;">
-            <input type="checkbox" id="permiso" name="permisos[]" value="{{$permiso->id}}" style=" margin-right: 10px;">{{$permiso->name}}
+            <input type="checkbox" id="permiso" name="permisos[]" value="{{$permiso->id}}" style="position: relative !important; visibility: visible !important; margin-left: 20px; width: 20px; height: 20px;">{{$permiso->name}}
         </label>
         <br>
         @endforeach

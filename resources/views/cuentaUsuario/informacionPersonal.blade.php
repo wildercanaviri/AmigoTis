@@ -13,7 +13,13 @@
 
 $(function(){
     $("#fecha_nac").datepicker({
-       dateFormat: 'dd/mm/yy', 
+       dateFormat: 'yy-dd-mm', 
+        dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+      
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+      
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+        monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec" ],
        changeMonth: true,
        changeYear: true,
         yearRange: '-100:+0'
@@ -24,44 +30,45 @@ $(function(){
 </script>
 <form action="/informacionPersonal/editar" method="post"> 
         {{csrf_field()}}   
-    <div class="" style="color: white; font-weight: bold;">
-          <div style="width: 50%;">
-              
+   <table style="background-color: transparent;">    
               <input type="text" name="id" value="{{Auth::user()->id}}" hidden>
+            <tr >               
+               <td id="idCampo">Nombre: </td>
+               <td><input class="form-control" type="text" name="nom_usu" value="{{Auth::user()->nom_usu}}">
+               </td>
+            </tr>
+            <tr>
+               <td id="idCampo">Apellido</td>
+               <td><input class="form-control" type="text" name="ape_usu" value="{{auth()->user()->ape_usu}}">
+               </td>
+            </tr>
+            <tr>
+               <td id="idCampo">Email</td>
+               <td><input  class="form-control"type="text" name="email" value="{{auth()->user()->email}}">
+               </td>
+            </tr>
+            <tr>  
+               <td id="idCampo">Fecha de Naciemiento</td>
+               <td><input class="form-control" type="text"  id="fecha_nac" name="fecha_nac" value="{{Auth::user()->fecha_nac}}">
+               <td>
+            </tr> 
                
-               <div style="margin-top: 20px; text-align: center;">
-                  <label style="margin-right: 37px;">Nombre</label>
-                  <input class="form-control" type="text" name="nom_usu" value="{{Auth::user()->nom_usu}}">
+            <tr>  
+               <td id="idCampo">Telefono</td>
+                <td>  <input class="form-control" type="text" name="tel_usu" value="{{Auth::user()->tel_usu}}">
+                </td> 
                </div>
-
-               <div style="margin-top: 20px; text-align: center;">
-                  <label style="margin-right: 37px;">Apellido</label>
-                  <input class="form-control" type="text" name="ape_usu" value="{{auth()->user()->ape_usu}}">
-               </div>
-               
-               <div style="margin-top: 20px; text-align: center;">
-                  <label style="margin-right: 47px;">Correo</label>
-                  <input  class="form-control"type="text" name="email" value="{{auth()->user()->email}}">
-               </div>
-               
-               <div style="margin-top: 20px; text-align: center;">
-                  <label>Fecha de Nac.</label>
-                  <input class="form-control" type="text"  id="fecha_nac" name="fecha_nac" value="{{Auth::user()->fecha_nac}}">
-               </div>
-               
-               <div style="margin-top: 20px; text-align: center;">
-                  <label style="margin-right: 35px;">Telefono</label>
-                  <input class="form-control" type="text" name="tel_usu" value="{{Auth::user()->tel_usu}}">
-               </div>
-          </div>
+            </tr>
            
-            <div>
-              <input type="submit" value=""  class="form-control"
+             <tr>
+               <td>
+               <input type="submit" value=""  class="form-control"
               style="background-image: url('{{asset('assets/img/botonEditar.png')}}'); 
                 background-size: contain; height: 40px; width: 143px;margin-left: 200px;margin-bottom: 10px; margin-top: 30px;" />
-            </div>
+               <td>
+            <tr>
           
-     </div>
+         </table>
 </form>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

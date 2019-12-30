@@ -8,7 +8,7 @@
 <form action="/roles/{{$rol->id}}" method="post" >
     {{csrf_field()}}
     <input type="hidden" name="_method" value="PUT">
-    <table style="background-color: transparent; margin-top: 30px;">
+    <table style="background-color: transparent; ">
     <tr>
     <td id="idCampo">Rol</td>
     <td>

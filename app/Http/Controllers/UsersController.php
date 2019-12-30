@@ -12,6 +12,8 @@ use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
 use App\Notificacion;
+use Session;
+
 class UsersController extends Controller
 {
     /**
@@ -87,9 +89,10 @@ class UsersController extends Controller
         if ($clave==$claveConf) {
         $usuarios->password=crypt($clave,'');
         $usuarios->save();
-       
+        Session::flash('mensaje', 'El usuario se ha creado con exito');
         return redirect("/usuarios");
-       }else
+       }
+       else
        {
         return "las contraseñas no coinciden";
        }
@@ -111,9 +114,11 @@ class UsersController extends Controller
         $usuario=User::findOrFail($id);
         
         $role= $usuario->roles;
-
         
-        return view("usuarios.show",compact("usuario","role","notificaciones"));
+       
+        
+      //  return view('usuarios.show')->with('usuario','role','notificaciones');        
+       return view("usuarios.show",compact("usuario","role","notificaciones"));
     }
 
     /**
