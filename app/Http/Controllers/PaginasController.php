@@ -17,8 +17,8 @@ class PaginasController extends Controller
     }
 
     public function boletin(){
- 
-    	return view("boletin");
+        $notificaciones=Notificacion::Notificacion("0")->paginate(10);
+    	return view("boletin",compact("notificaciones"));
     }
 
 

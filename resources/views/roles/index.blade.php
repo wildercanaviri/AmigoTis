@@ -6,6 +6,7 @@
   @include("../roles/menu")
   <h2 style="color: white;">ESTA ES LA VISTA DE AMINISTRADOR-PESTAÑA ROLES</h2> 
 @endsection
+
 @section("contenido")
     <input type="submit" class="form-control" value="" onclick = "location='/roles/create'"
      style="background-image: url('{{asset('assets/img/botonCrearRol.png')}}'); 

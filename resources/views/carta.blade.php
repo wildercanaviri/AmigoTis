@@ -134,9 +134,9 @@
             
               
           <div id="microfonoDiv">
-            <img src="{{asset('assets/img/microfono.png')}}" id="microfono" onclick="procesar()" style="cursor: pointer;">
+            <img hidden src="{{asset('assets/img/microfono.png')}}" id="microfono" onclick="procesar()" style="cursor: pointer;">
             <div>
-            <button onclick="procesar()" id="procesar"> Dictar por Voz</button>
+            <button hidden onclick="procesar()" id="procesar"> Dictar por Voz</button>
             </div>
         </div>
            

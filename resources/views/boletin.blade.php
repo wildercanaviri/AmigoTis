@@ -48,7 +48,50 @@
                     </ul>
                   </div>
                 </nav>  
-        <h2 style="color: white;">BOLETINES PUBLICADOS</h2>
+   
       @endsection  
+
+      @section("contenido")
+
+    <div class="col-md-4 ">
+   
+    </div>
+   
+      <div class="col-md-8" style="width: 80%; height: 500px;  justify-content: center;">
+        
+          <h2 style="color: yellow">EL MEJOR DIA QUE TUVE</h2>
+          <p style="color: yellow">
+            El 24 de febrero viaje con mis padres a un lugar nuevo
+            e impresionante viendo de una manera distinta otros lugares........<a href="" style="color: red">ver mas</a>
+          </p>
+         <img src="{{asset('assets/img/avion.png')}}" height="80px" width="150px">
+
+          <p><strong style="color: blue">Me gusta</strong> |<strong style="color: orange">43</strong> </p>
+        
+
+         <h2 style="color: yellow">MI FAMILIA</h2>
+          <p style="color: yellow">
+            El 24 de febrero viaje con mis padres a un lugar nuevo
+            e impresionante viendo de una manera distinta otros lugares........<a href="" style="color: red">ver mas</a>
+          </p>
+         <img src="{{asset('assets/img/avion.png')}}" height="80px" width="150px">
+          <p><strong style="color: blue">Me gusta</strong> |<strong style="color: orange">22</strong> </p>
+
+        <h2 style="color: yellow">CON MIS AMIGUITOS</h2>
+          <p style="color: yellow">
+            El 24 de febrero viaje con mis padres a un lugar nuevo
+            e impresionante viendo de una manera distinta otros lugares........<a href="" style="color: red">ver mas</a>
+          </p>
+         <img src="{{asset('assets/img/avion.png')}}" height="80px" width="150px">
+          <p><strong style="color: blue">Me gusta</strong>|<strong style="color: orange">65</strong> </p>
+
+
+      </div>
+    
+    <div class="col-md-4">
+      <h1></h1>
+    </div>
+      
+    @endsection
     </body>
 </html>
