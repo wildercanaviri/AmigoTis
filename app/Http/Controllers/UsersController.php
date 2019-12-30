@@ -130,10 +130,9 @@ class UsersController extends Controller
               return redirect("/usuarios");
         }
        //FIN VALIDAR CORREO
-       }else{
-       
-        return "las contraseñas no coinciden";
-       
+       }else{       
+             Session::flash('error_email','Las contraseñas estan repetidas');
+             return view('usuarios.create',compact("datos","roles","notificaciones"));
        }
     }
     /**
