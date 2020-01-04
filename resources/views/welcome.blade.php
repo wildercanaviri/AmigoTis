@@ -67,15 +67,15 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <center>
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="width: 80%;">
           <div class="carousel-item active">
-            <img src ="{{asset('assets/img/carusel/fondo1.png')}}" class="d-block w-100" width="100" height="500">
+            <img src ="{{asset('assets/img/carusel/fondo1.png')}}" class="d-block w-100" height="450">
           </div>
           <div class="carousel-item">
-            <img src="{{asset('assets/img/carusel/fondo2.png')}}" class="d-block w-100" width="100" height="500" >
+            <img src="{{asset('assets/img/carusel/fondo2.png')}}" class="d-block w-100" height="450" >
           </div>
           <div class="carousel-item">
-            <img src="{{asset('assets/img/carusel/fondo3.png')}}" class="d-block w-100" width="100" height="500">
+            <img src="{{asset('assets/img/carusel/fondo3.png')}}" class="d-block w-100" height="450">
           </div>
         </div>
         </center>
@@ -96,15 +96,15 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <center>
-        <div class="carousel-inner" style="width: 70%">
+        <div class="carousel-inner" style="width: 80%">
           <div class="carousel-item active">
-            <img src ="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100" width="100" height="500">
+            <img src ="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100" height="450">
           </div>
           <div class="carousel-item">
-            <img src="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100" width="100" height="500" >
+            <img src="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100"  height="450" >
           </div>
           <div class="carousel-item">
-            <img src="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100" width="100" height="500">
+            <img src="{{asset('assets/img/carusel/bienvenido_usuario.png')}}" class="d-block w-100"  height="450">
           </div>
         </div>
         </center>

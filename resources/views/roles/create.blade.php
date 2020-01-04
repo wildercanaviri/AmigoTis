@@ -31,7 +31,7 @@
     <tr>
       <td id="idCampo">Descripcion del rol: </td>
       <td>
-        <input type="text"  class="form-control"name="descripcion" required>
+        <input type="text"  class="form-control" name="descripcion" required>
       </td>
     </tr>
 
