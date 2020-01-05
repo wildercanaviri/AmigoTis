@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>AMIGO MENSAJERO</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -18,13 +19,12 @@
         rel="stylesheet" media="all" />
       
         <!-- Bootstrap -->
-         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
         <link href="{{asset('assets/css/draganddrop.css')}}" rel="stylesheet">
         
         <script src="{!! asset('assets/js/dragandrop.js') !!}"></script>
         <style type="text/css">
-          .borde{ border:1px #fff solid;color: #fff; }
           .atras{
             /*position: relative;*/
           }
@@ -34,13 +34,11 @@
              left:0px;
              border:none;*/
           }
-
         </style>
     </head>
     <body>
     @extends("layout.plantilla")
       @section("cabecera") 
- 
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(255,192,0);">
                   
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,11 +69,10 @@
                     </ul>
                   </div>
                 </nav> 
-         
-                <div class="panelIzquierda">
+        <div class="panelIzquierda">
          
            <div  id="cajaimagen" ondragenter="return enter(event)" ondragleave="return leave(event)" ondrop="return clonar(event)" >
-                          <img class="imagen" src= "{{asset('assets/img/default/mama_coco.png')}}"  id="img" draggable="true" ondragstart="start(event)" ondragend="end(event) ">
+                          <img class="imagen" src= "{{asset('assets/img/default/mama_coco.png')}}"  id="img" draggable="true" ondragstart="start(event)" ondragend="end(event)">
                           <img class="imagen" src ="{{asset('assets/img/default/auto.png')}}" id = "img1"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
                           <img class="imagen" src ="{{asset('assets/img/default/minecraft.png')}}" id = "img2"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
                           <img class="imagen" src ="{{asset('assets/img/default/Perro.png')}}" id = "img3"  draggable="true" ondragstart="start(event)" ondragend="end(event)">
@@ -89,20 +86,16 @@
               </div>
    
             </div>
-            
-        </div>  
-
-
-            
-            
-               <div class="panelCentral">
-       
-         
-          <form action="/carta" method="post" enctype="multipart/form-data" name="form1" >
+        </div>   
+      <div class="panelCentral">
+        
+         <!-- <form ondragstart="return false;" ondrop="return false;" action="/carta" method="post" enctype="multipart/form-data" name="form1" >
+         -->
+         <form action="/carta" method="post" enctype="multipart/form-data" name="form1" >
         {{csrf_field()}}
          <input type="file"  class= "eligir_archivos" name="mi_imagen[]" id="file-upload" multiple="true" style="color: white;margin-left: 20px;margin-bottom: 20px; ">
          <div class="contenedorPerrito" >
-              <img src="{{asset('assets/img/perrito.png')}}" id="imagenPerrito" />
+              <img src="{{asset('assets/img/perrito.png')}}" height="200px" width="300px" id="imagenPerrito" />
               
               <div class="centradoMiNombreEs">
                 <textarea id="cajaPerrito" name="campo_nombre" placeholder="Mi nombre es..."></textarea>
@@ -114,46 +107,47 @@
         </div>
         <section class="atras" style="text-align: center;">
               <div class="example sobre" >
-                <img src="{{asset('assets/img/cuaderno.png')}}" id="cuaderno" >
+                <img src="{{asset('assets/img/cuaderno.png')}}" style=" margin-top: -71px;margin-left: -70px;" width="82%" height="450px">
                 
                 
 
-                <textarea id="texto" cols="56" rows="7" class="textarea" name="contenido" placeholder="Escribe aquí" required="true"></textarea>
+                <textarea id="texto" cols="56" rows="8" class="textarea" name="contenido" placeholder="Esta es una prueba" required="true"></textarea>
 
                 <!--  
                 <img src="{{asset('assets/img/botonEnviar.png')}}" height="80px" width="180px" onclick="alert('Se enviará la carta al Amigo Mensajero');" style="cursor: pointer; margin-left: 50px;">
                !-->
-                <input type="submit" name="EnviarCarta" value="" style="background-image: url('{{asset('assets/img/botonEnviar.png')}}'); " id="botonEnviar" onclick="if  data-toggle="modal" data-target="#exampleModalCenter">
-                @include("../cartaenviada")
+                <input type="submit" name="EnviarCarta" value="" style="background-image: url('{{asset('assets/img/botonEnviar.png')}}'); 
+                background-size: contain; height: 89px; width: 190px; margin-left: 50px; position: absolute; top: 520px; " onclick="abreModal()" >
               </div>
           </section> 
            <section id="clonado" ondragenter="return enter(event)" ondragover="return over(event)" ondragleave="return leave(event)" ondrop="return clonar(event)" style="overflow: scroll;">
               <output id="list" for="mi:_imagen[]"></output>
             </section>
       </form>
-      </div>
-            
-            
-              
-          <div id="microfonoDiv">
-            <img hidden src="{{asset('assets/img/microfono.png')}}" id="microfono" onclick="procesar()" style="cursor: pointer;">
-            <div>
-            <button hidden onclick="procesar()" id="procesar"> Dictar por Voz</button>
-            </div>
-        </div>
-           
-         
-     
 
-
-      
-          
-       
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalScrollableTitle">Gracias por Enviarnos tu Carta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+               <img src="{{asset('assets/img/default/enviocarta.jpg')}}" class="d-block w-100" width="100" height="300" >
+               <p> sigue  contandonos tus aventuras </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button"class="btn btn-success" data-dismiss="modal" >Gracias amigo mensajero
+                </button>
         
+              </div>
+            </div>
+          </div>
+        </div>
 
-          
-            
-            <script>
+      <script>
             /*  
     function readFile(input) {
         if (input.files && input.files[0]) {
@@ -273,6 +267,19 @@ function openImage() { //Esta función validaría una imágen
         }
   }
     document.getElementById("file-upload").addEventListener("change",openImage,false); //Añadimos un evento al input para que se dispare cuando el usuario seleccione otro archivo
+
+  function abreModal(){
+      var carta = document.getElementById("texto").value;
+      if( carta.trim().length > 0 ){
+          $("#myModal").modal('show');
+      }else{
+          $("#sincontenido").modla('show');
+      } 
+    
+  } 
+
+
+
 </script>
         @endsection 
         <script type="text/javascript" src="{!! asset('assets/js/mot_recon_voz.js') !!}" async></script>
